@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.4"
+ruby "2.2.1"
 
 #
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
@@ -52,7 +52,7 @@ gem "awesome_print"
 
 group :development do
   # Access an IRB console on exceptions page and /console in development
-  gem "web-console"
+  gem "web-console","~> 2.3"
 end
 
 group :development, :test do
