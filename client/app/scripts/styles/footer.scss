@@ -1,0 +1,44 @@
+.rb-footer{
+  display: block;
+  padding: 40px 0 20px;
+  margin-bottom: 0px;
+  color: #ff9fc9;
+  font-size: 16px;
+  background: #777777;
+  .footer-content{
+    width: 900px;
+    margin: 30px auto;
+    @include isDevice("ipad") {
+      width: auto;
+    }
+    ul{
+      text-align: left;
+      float: left;
+      padding: 0 40px;
+      @include isDevice("ipad") {
+        padding: 0 25px;
+      }
+    }
+    li{
+      margin-bottom: 5px;
+    }
+  }
+  a {
+    color: #eee;
+    font-weight: normal;
+  }
+  #copyright{
+    margin-top: 30px  !important;
+  }
+  #copyright, .powered_by {
+    color: #aaa;
+    margin: 10px auto 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and(max-width: $rb-mobile-screen){
+  .rb-footer{
+    display: none !important;
+  }
+}

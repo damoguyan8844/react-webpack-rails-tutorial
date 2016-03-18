@@ -1,0 +1,89 @@
+
+.navi_bar_mv {
+  display: none;
+}
+
+.navi_bar_mv .navi_bar_header .fa {
+  color: #fff !important;
+  font-size: 20px;
+}
+
+.mw_dropdown_container {
+  display: none;
+  position: fixed;
+  top: 40px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #222222;
+  overflow: auto;
+  overflow-x: hidden;
+  z-index: 999;
+
+  @include isDevice("!mobile") {
+    display: none;
+  }
+
+  .mw_dropdown_item {
+    width: 100%;
+    float: left;
+    display: block;
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    height: initial;
+    height: auto;
+  }
+
+  .mw_dropdown_item--first {
+    padding-top: 20px;
+  }
+
+  .mw_dropdown_item--last {
+    padding-bottom: 20px;
+  }
+
+  .mw_dropdown_item:hover {
+    color: #ee3888;
+    .nav_badge{
+      color: white;
+    }
+  }
+}
+
+
+.mw_dropdown_sub_container {
+  width: 100%;
+  float: left;
+  border-top: 1px solid #515151;
+  border-bottom: 1px solid #515151;
+
+}
+
+.mw_dropdown_sub_container .number {
+    color: #fff;
+  }
+
+.nav_progress_bar_container {
+    width: 100%;
+    background: #fff;
+    height: 8px;
+}
+
+.nav_progress_content {
+      background: #ee3888;
+      height: 8px;
+}
+
+.mw_language_switch {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff
+}
+
+.nav_submenu_user a {
+  @include isDevice("!mobile") {
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,51 @@
+/*********** Flash Msgs ****************/
+
+#flash_msgs div {
+  cursor: default;
+  position: fixed;
+  left: 50%;
+  top: 29px;
+  text-align: center;
+  width: 300px;
+  margin-left: -150px;
+  display: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 18px 40px;
+  color: #fff;
+  z-index: 11000;
+  height: auto;
+  border-radius: 3px;
+  opacity: 0.975;
+  -webkit-box-shadow: 0px 0px 1px 0px #383838;
+  -moz-box-shadow: 0px 0px 1px 0px #383838;
+  box-shadow: 0px 0px 1px 0px #383838
+}
+
+#flash_msgs div.notice {
+  background-color: #64b62b
+}
+
+#flash_msgs div.error {
+  background-color: #eb4121
+}
+
+#flash_msgs div.warning {
+  background-color: #f56403
+}
+
+#flash_msgs div.info {
+  background-color: #3c86e6
+}
+
+#flash_msgs div > span.flash_msgs_close_button {
+  width: 16px;
+  height: 16px;
+  background-image: url(/images/jquery_ui/ui-icons_ffffff_256x240.png);
+  background-position: -96px -128px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  font-size: 12px;
+  cursor: pointer
+}

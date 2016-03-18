@@ -1,0 +1,23 @@
+.rb-login{
+  max-width:$rb-app-width;
+  margin-left:auto;
+  margin-right:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  >div{
+    padding:20px;
+  }
+  span{
+    width:100px;
+    display: inline-block;
+    text-align: right;
+  }
+  input{
+    width:200px;
+  }
+  .login-btn{
+    @include edit-button(40px,120px,16px,$rb-hightlight-color);
+  }
+}

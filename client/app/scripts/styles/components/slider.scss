@@ -1,0 +1,70 @@
+/**
+ * Rangeslider
+ */
+.rangeslider {
+  margin:10px 0;
+  position: relative;
+  background: #EAEAEA;
+  cursor: pointer;
+  .rangeslider__fill, .rangeslider__handle {
+    position: absolute;
+  }
+  &, .rangeslider__fill {
+    display: block;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  .rangeslider__handle {
+    background: $rb-app-pink;
+    border: 1px solid $rb-app-pink;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+/**
+ * Rangeslider - Horizontal slider
+ */
+.rangeslider-horizontal {
+  height: 4px;
+  border-radius: 4px;
+  .rangeslider__fill {
+    height: 100%;
+    background: $rb-app-pink;
+    border-radius: 4px;
+    top: 0;
+  }
+  .rangeslider__handle {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    top: -4px;
+  }
+}
+
+/**
+ * Rangeslider - Vertical slider
+ */
+.rangeslider-vertical {
+  margin: 10px auto;
+  height: 150px;
+  max-width: 10px;
+  background: none;
+  .rangeslider__fill {
+    width: 100%;
+    background: #27ae60;
+    box-shadow: none;
+    bottom: 0;
+  }
+  .rangeslider__handle {
+    width: 30px;
+    height: 10px;
+    left: -10px;
+    &:active {
+      box-shadow: none;
+    }
+  }
+}

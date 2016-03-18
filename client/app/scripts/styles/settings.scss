@@ -1,0 +1,553 @@
+.rb-settings {
+
+  max-width:$rb-app-width;
+  background-color: $rb-app-background-color;
+  min-height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rb-settings_header{
+  display: none;
+  padding: 10px 25px;
+  @include isDevice("desktop") {
+    display: block !important;
+  }
+}
+
+.rb-settings_nav {
+
+  display: none;
+  font-weight: 500;
+  font-size: 16px;
+
+  @include isDevice("mobile") {
+    display: none !important;
+  }
+  .nav-tabs{
+    padding-left: 30px;
+  }
+}
+
+//Removing loops make bootstrap css overwrite
+.nav-tabs {
+  .rb-settings_item > a {
+    color:$rb-normal-color;
+    padding: 12px 30px;
+    font-size: 20px;
+    margin-bottom: -1px;
+    @include isDevice("ipad") {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  }
+
+  .rb-settings_item.active>a,
+  .rb-settings_item.active>a:hover,
+  .rb-settings_item.active>a:focus{
+    border-radius: 0px;
+    color:$rb-app-pink;
+    background-color: $rb-background-color;
+  }
+}
+
+
+.rb-settings_mb_nav {
+  position: relative;
+  padding: 8px 12px;
+  display: inline-block;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.9);
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 20px;
+  width:100%;
+  border-bottom: solid 1px $rb-app-border;
+  @include isDevice("!mobile") {
+    display: none !important;
+  }
+}
+
+.rb-settings_hideMenu{
+  @include isDevice("!mobile") {
+    display: none !important;
+  }
+}
+
+.rb-settings_mb_nav:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin-left: 10px;
+  top: 50%;
+  margin-top: -3px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid grey;
+}
+
+.rb-settings_mb_nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  right: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  width: 104px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 4px;
+  z-index: 999;
+}
+
+.rb-settings_mb_nav.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+.rb-settings_mb_nav.active:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid grey;
+  border-top: 0;
+}
+
+.rb-settings_mbitem {
+  padding: 15px 10px;
+  border-bottom: solid 1px $rb-app-border;
+  color: $rb-hightlight-color;
+  cursor: pointer;
+}
+
+.rb-settings_label{
+  width: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  font-size: 20px;
+  font-weight:500;
+  margin-bottom: 15px;
+  @include isDevice("mobile") {
+    border-bottom: 1px solid $rb-divider-gray;
+    margin-bottom: 20px;
+  }
+
+  &--notification {
+    @include isDevice("mobile") {
+      display: none;
+    }
+  }
+}
+
+.vip-diamonds {
+  padding: 30px 60px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  @include isDevice("mobile") {
+    padding: 15px;
+  }
+}
+
+.vip-diamonds_title {
+  color:rgba(0, 0, 0, 0.82);
+  font-size: 40px;
+  margin-bottom: 10px;
+  text-align: left;
+  display: none;
+  @include isDevice("!mobile") {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.vip-diamonds_tip{
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.vip-diamonds_mb-plans {
+  display: block;
+  @include isDevice("!mobile") {
+    display: none;
+  }
+}
+
+.vip-diamonds_right_content{
+  padding-left: 30px;
+  text-align: left;
+  font-size: 14px;
+  padding-top: 10px;
+  @include isDevice("mobile") {
+    margin-left: 0;
+  }
+  @include isDevice("!mobile") {
+    width: 75%;
+    min-width: 75%;
+  }
+}
+.vip-diamonds_right_title{
+  font-size: 20px;
+  font-weight: bold;
+  @include isDevice("mobile") {
+    margin: 30px 0 0 0;
+  }
+}
+
+.vip-diamonds_right_text {
+  @include isDevice("mobile") {
+    margin-bottom: 30px;
+  }
+  @include isDevice("!mobile") {
+    max-width: 80%;
+  }
+}
+
+.vip-diamonds_rights {
+  display: inline-block;
+  width: 100%;
+  float: none;
+  @include isDevice("!mobile") {
+    width: 70%;
+    float: left;
+  }
+}
+.vip-diamonds_mb-plans {
+  @include isDevice("!mobile") {
+    display: none;
+  }
+}
+.vip-diamonds_right_items {
+  @include isDevice("!mobile") {
+    display: flex !important;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.vip-diamonds_right_pic {
+  @include isDevice("!mobile") {
+    min-width: 25%;
+    width: 25%;
+    height: auto;
+  }
+}
+.vip-diamonds_plan_item{
+  border-radius: 8px;
+  border: solid 1px $rb-app-border;
+  margin-bottom: 10px;
+  color: #191919;
+  padding: 15px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif, 宋体;
+  cursor: pointer;
+  @include isDevice("!mobile") {
+    width: 220px;
+    margin-bottom: 30px;
+  }
+}
+.vip-diamonds_plan_price {
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  margin-top: 5px;
+  display: block;
+}
+.vip-diamonds_plan_header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  @include isDevice("!mobile") {
+    margin: 20px 0;
+  }
+}
+.vip-diamonds_plan_name {
+  display: block;
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.82);
+  color: #EE3888;
+}
+.vip-diamonds_plans {
+
+  float: right;
+  width: 30%;
+  @include isDevice("mobile") {
+    float: none;
+    width: 100%;
+  }
+}
+.vip-diamonds_plan_monthly-price {
+  font-size: 12px;
+  color:#797979;
+  font-weight: normal;
+}
+.vip-diamonds_purchase{
+  @include rb-button-filled(50px, 100%, 16px, $rb-app-pink);
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  background: $rb-app-pink;
+  @include isDevice("!mobile") {
+    width: 220px;
+  }
+  @include isDevice("mobile") {
+    margin-bottom: 45px;
+  }
+}
+.vip-diamonds_most-popular{
+  color:#FFA600;
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block;
+}
+.setting-diamonds{
+  .vip-diamonds_plan_item{
+    text-align: center;
+  }
+  .diamonds-tip{
+    @include isDevice("desktop") {
+      display: none;
+    }
+  }
+  .vip-diamonds_title{
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .plan-panel{
+    @include isDevice("desktop") {
+      width: 95%;
+    }
+  }
+}
+
+.better-plan{
+  background-color: #FFEEF6;
+}
+
+.notifications {
+  display: block;
+  padding: 50px 60px;
+  justify-content: space-between;
+
+  @include isDevice("!mobile") {
+    display: flex !important;
+  }
+  @include isDevice("mobile") {
+    padding: 15px;
+  }
+}
+
+.notifications_button {
+  @include rb-button-filled(40px,100%,16px,$rb-app-green);
+  margin-top: 25px;
+  @include isDevice("!mobile") {
+    width: 175px  !important;
+    float: right;
+  }
+}
+.notifications_sub-label{
+  display: none;
+  color: #858585;
+  text-align: left;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  @include isDevice("!mobile") {
+    display: block !important;
+  }
+}
+.notifications_item{
+
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+
+  .rb-checkbox {
+    margin: 0 5px 0;
+  }
+
+  .rb-checkbox-label {
+    overflow: visible;
+    white-space: pre-line;
+    @include isDevice("mobile") {
+      font-size: 14px;
+    }
+  }
+
+  .rb-checkbox:checked + .rb-checkbox-label:before,
+  .rb-checkbox + .rb-checkbox-label:before {
+    margin: 5px 20px;
+    margin-left: 0px;
+
+    @include isDevice("mobile") {
+      margin: 2px 10px 0 0;
+    }
+  }
+}
+
+.account{
+  padding: 50px;
+  @include isDevice("mobile") {
+    padding: 15px;
+  }
+}
+.account_input{
+  height: 52px;
+  width: 100%;
+  padding-left: 10px;
+  @include isDevice("!mobile") {
+    width: 70% !important;
+  }
+}
+.account_content-group {
+  display: block;
+  @include isDevice("!mobile") {
+    display: flex !important;
+    justify-content: space-between;
+  }
+}
+.account_button {
+  border-radius: 2px;
+  @include rb-button-filled(40px, 100%, 16px, $rb-app-pink);
+  margin-top: 10px;
+  @include isDevice("!mobile") {
+    width: 175px;
+    margin-top: 0px !important;
+  }
+  @include isDevice("mobile") {
+    margin: 20px 0;
+  }
+}
+.account_getVIP-button{
+  background: $rb-app-pink;
+}
+.account_update-button {
+  background: $rb-app-green;
+}
+.account_disabled-button {
+  background-color: #959595;
+}
+.account_delete-button {
+  background-color: #FF0000;
+}
+.account_divider {
+  width: 100%;
+  border-bottom: solid 1px $rb-app-border;
+  margin: 25px 0;
+  @include isDevice("mobile") {
+    display: none;
+  }
+}
+.account_input-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  @include isDevice("!mobile") {
+    width: 70% !important;
+  }
+}
+.account_sub-label {
+  margin: 20px 0 10px 0;
+  @include isDevice("!mobile") {
+    width: 55%;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.account_label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+@media only screen and(min-width: $rb-mobile-screen){
+  .setting-vip-status, .setting-diamonds{
+
+    .vip-plans{
+      float: right;
+      width: 250px !important;
+      padding: 5px 15px;
+    }
+    .plan-items {
+      display: flex !important;
+      justify-content: center;
+    }
+  }
+}
+
+.contact{
+  padding: 50px;
+  @include isDevice("mobile") {
+    padding: 15px;
+  }
+}
+.contact_label {
+  font-size: 20px;
+}
+
+.contact_content-group {
+  display: block;
+  @include isDevice("!mobile") {
+    display: flex !important;
+    justify-content: space-between;
+  }
+}
+.contact_sub-label {
+  margin: 20px 0 10px 0;
+  @include isDevice("!mobile") {
+    width: 56%;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.contact_help-button{
+  @include edit-button(52px,175px,18px,white);
+  background: $rb-app-pink;
+}
+.contact_button {
+  border-radius: 2px;
+  width: 100% ;
+  font-size: 16px;
+  margin-top: 10px;
+  @include isDevice("!mobile") {
+    width: 175px !important;
+    margin-top: 0px !important;
+  }
+  @include isDevice("mobile") {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.contact_button a {
+  color: #fff
+}
+//COULDN'T FIND THE RESPECTIVE CLASS IMPLEMENTATION IN THE JS
+.span{
+  color:$rb-app-pink;
+}
+.diamond-count{
+  color:$rb-app-pink;
+}
+.vip-tip{
+  margin-top: 25px;
+  margin-bottom: 38px;
+}
+.pick-plan{
+  color:rgba(25, 25, 25, 0.8);
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 25px;
+}
+.plan-items {
+  padding: 5px 0px;
+}
+.error_warning{
+  margin-left: 5px;
+  color: red;
+}

@@ -19,6 +19,7 @@ module.exports = {
     path: '../app/assets/webpack',
   },
   resolve: {
+    root: path.resolve('./client/app'),
     extensions: ['', '.js', '.jsx'],
     alias: {
       libs: path.join(process.cwd(), 'app', 'libs'),

@@ -1,0 +1,43 @@
+@import "../../_mixins";
+@import "../../_variables";
+
+.rb-email-confirm{
+  position: fixed;
+  bottom:0px;
+  .modal-content{
+    border:none;
+    border-radius: 0px;
+  }
+  .rb-dialog-content{
+    height: 195px;
+  }
+  .rb-dialog-body{
+    padding:10px;
+  }
+  .description{
+    padding-bottom:20px;
+    font-size:14px;
+    line-height: 15px;
+    color:black;
+  }
+  .ok{
+    @include rb-button-filled(40px,100%,14px,$rb-hightlight-color);
+    margin-bottom:10px;
+  }
+  .resend{
+    text-decoration: underline;
+    font-size:14px;
+    color:black;
+  }
+}
+
+@media only screen and(min-width: $rb-mobile-screen){
+  .rb-email-confirm{
+    position:static;
+    bottom:auto;
+    .modal-content{
+      border-radius: 4px;
+    }
+  }
+}
+

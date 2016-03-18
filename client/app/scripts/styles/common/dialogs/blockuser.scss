@@ -1,0 +1,52 @@
+@import "../../_mixins";
+@import "../../_variables";
+
+.block-user_modal {
+  .modal-dialog {
+    width: 340px;
+    height: 170px;
+    margin: auto;
+    @include isDevice("mobile") {
+      width: 100%;
+    }
+  }
+
+  .modal-content {
+    border-radius: 4px;
+    @include isDevice("mobile") {
+      border-radius: 0;
+      height: 100%;
+    }
+  }
+}
+
+.block-user_header {
+  border: none;
+}
+
+.block-user_title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.block-user_button {
+  @include rb-button-filled(40px,290px,16px,$rb-edit-red);
+  margin: 0 25px 15px;
+  line-height: 0;
+
+  @include isDevice("mobile") {
+    width: 90%;
+    display: block;
+    margin: 0 auto 15px;
+  }
+}
+
+.block-user-footer {
+  border: none;
+}
+
+.block-user_button--cancel {
+  background-color: white;
+  border: 1px solid $rb-profile-border;
+  color: black;
+}

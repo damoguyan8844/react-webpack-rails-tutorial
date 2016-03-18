@@ -1,0 +1,471 @@
+@import './_variables';
+@import './_mixins';
+
+.rb-home{
+  max-width:$rb-app-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  background-color: $rb-app-background-color;
+
+  @include isDevice("!mobile") {
+    padding:15px ;
+    display:flex;
+  }
+}
+.rb-home-left{
+  @include isDevice("!mobile") {
+    width:65%;
+    padding-right:5%;
+  }
+}
+.rb-home-right{
+  @include isDevice("!mobile") {
+    width:35%;
+  }
+}
+
+
+//MatchSteps
+.rb-home-left .match-steps{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  -ms-flexwrap: wrap;
+
+  @include isDevice("!mobile") {
+    height:175px;
+    border:1px solid #e0e0e0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+  .title{
+    font-size:20px;
+    text-align: center;
+    padding:10px 0px 5px 0px;
+    @include isDevice("!mobile") {
+      position: relative;
+      width: 100%;
+
+    }
+  }
+  .horizontal-delimit{
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 70%;
+    left: 15%;
+    border-bottom: 1px dashed #9e9e9e;
+    right: 15%;
+    @include isDevice("!mobile") {
+      display: block;
+    }
+  }
+  .step_wrapper {
+    position: relative;
+    z-index: 6;
+  }
+  .step{
+    text-align: center;
+    color:black;
+    font-size:14px;
+    padding:15px 0px;
+    display: inline-block;
+    z-index: 5;
+    @include isDevice("!mobile") {
+      padding:2px 0 15px 0;
+    }
+    &.checked{
+      cursor: auto;
+    }
+  }
+  .step-icon{
+    width:100px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color: white;
+  }
+  .step-title{
+    padding-top:7px;
+  }
+  .delimit{
+    border-bottom: 1px dashed #9e9e9e;
+    width:20%;
+    @include isDevice("!mobile") {
+      display: none;
+    }
+  }
+}
+//Activity and New Users
+.home-activity-new-users{
+  padding:20px 0px;
+  @include isDevice("mobile") {
+    padding: 20px 15px;
+    border-top:1px solid $rb-app-border;
+  }
+  .tab-header{
+    font-size:24px;
+    border-bottom:1px solid $rb-app-border;
+    a{
+      color: black;
+      padding:10px 15px 5px 15px;
+      margin-right:30px;
+      display: inline-block;
+      height: 100%;
+      &.active{
+        border-bottom: 3px solid $rb-hightlight-color;
+      }
+    }
+  }
+}
+.home-activity{
+  .activity-item{
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 75px;
+    a{
+      color:$rb-hightlight-color;
+      text-decoration: underline;
+    }
+    .photos{
+      display: flex;
+      right: 0px;
+      position: absolute;
+      height: 100%;
+      align-items: center;
+      img{
+        width:50px;
+        height: 50px;
+        margin-left: 10px;
+      }
+    }
+
+  }
+  .avatar{
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+    img{
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  .next-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .link{
+      color:$rb-hightlight-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+  }
+}
+//Events
+.home-events{
+  @include isDevice("mobile") {
+    padding: 5px 15px;
+  }
+  .title{
+    font-size:24px;
+    padding-bottom: 15px;
+  }
+  .event-item{
+    .name{
+      font-size: 20px;
+      color: white;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+    .date{
+      font-size: 16px;
+      color: #FFDBEB;
+      display: inline-block;
+      line-height: 26px;
+      position: absolute;
+      right: 0px;
+      top: 5px;
+      padding:0px 10px;
+      background-color: rgba(0,0,0,0.6);
+    }
+  }
+  .event-box{
+    width:100%;
+    height: 125px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom:20px;
+    img{
+      width:100%;
+    }
+  }
+  .overlay{
+    position: absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    ackground-image: linear-gradient(rgba(0, 0, 0, 0), black);
+  }
+
+}
+
+//Challenges
+.home-challenges{
+  @include isDevice("mobile") {
+    padding: 5px 15px;
+  }
+  .title{
+    font-size:24px;
+    padding:5px 0px;
+  }
+  .challenge-title{
+    font-size: 16px;
+  }
+  .challenge-desc{
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  .challenge-item{
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 50px;
+    margin-bottom:20px;
+  }
+  .avatar{
+    margin-right:10px;
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  .diamonds{
+    position: absolute;
+    height: 100%;
+    right:0px;
+    display: flex;
+    align-items: center;
+    width: 45px;
+    justify-content: space-between;
+  }
+}
+
+//Open Questions
+.rb-home .mobile-question-list{
+  @include isDevice("!mobile") {
+    display: none;
+  }
+  position: fixed;
+  left:0px;
+  right:0px;
+  top:0px;
+  bottom:0px;
+  z-index: 500;
+  background-color: white;
+  .done{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 501;
+    height: 70px;
+    width: 100%;
+    bottom:0px;
+    background-color: white;
+    padding:0px 15px;
+    border:1px solid $rb-app-border;
+
+  }
+  .done-btn{
+    @include rb-button-filled(40px,100%,16px,$rb-hightlight-color);
+  }
+}
+.rb-home .home-question-popover{
+  @include isDevice("mobile") {
+    display: none;
+  }
+  .close-btn{
+    @include rb-button-filled(26px, 80px,14px,$rb-hightlight-color);
+    line-height: 26px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    right:0px;
+    top:-26px;
+
+  }
+  .modal-content{
+    border-radius: 0px;
+    width:640px;
+  }
+  .popover-body{
+    display: flex;
+    width: 640px;
+    height: 543px;
+  }
+  .edit-question, .question-list{
+    width: 50%;
+  }
+  .question-list{
+    border-right: 1px solid $rb-app-border;
+  }
+  .question-header{
+    height: 125px;
+  }
+  .edit-area{
+    top:125px;
+  }
+
+}
+.question-list{
+  .list-header{
+    height: 125px;
+    padding:15px;
+    background-color: #67748C;
+    color:white;
+    .header-title{
+      font-size:18px;
+      text-align: center;
+    }
+    .desc{
+      font-size:14px;
+    }
+  }
+  .list{
+    .item{
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      padding:0px 15px;
+      align-items: center;
+      color:$rb-sub-color;
+      border-bottom:1px solid $rb-app-border;
+      cursor: pointer;
+      &.active{
+        background-color: #F3F3F3;
+      }
+    }
+
+  }
+}
+.rb-home .mobile-edit-question{
+  @include isDevice("!mobile") {
+    display: none;
+  }
+  position: fixed;
+  left:0px;
+  right:0px;
+  top:0px;
+  bottom:0px;
+  z-index: 500;
+  background-color: white;
+
+}
+.edit-question{
+  height: 100%;
+  position: relative;
+  .question-header{
+    height: 100px;
+    background-color:#67748C;
+    padding:15px 15px 0px 15px;
+    color:white;
+    text-align: center;
+  }
+  .edit-area{
+    width:100%;
+    position: absolute;
+    top: 100px;
+    bottom: 40px;
+    background-color: white;
+  }
+  .edit-text-area{
+    width: 100%;
+    height: 100%;
+    padding:15px;
+    textarea{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .cancel{
+    @include edit-button(40px,50%,16px,$rb-light-color);
+    background-color: white;
+    border-color: #CECECE;
+  }
+  .save{
+    @include rb-button-filled(40px,50%,16px,$rb-hightlight-color);
+  }
+  .cancel, .save{
+    border-radius: 0px;
+    border-left:none;
+    border-right:none;
+  }
+}
+
+.rb-dating-safety{
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  .rb-home-right{
+    float: right;
+    width: 355px;
+  }
+}
+.dating-safety{
+  width: 620px;
+  float: left;
+  .type_1_tw {
+    background: url("/app/images/dating_safely_types_tw.png") no-repeat 0% 3%;
+    background-size: cover;
+    min-height: 280px;
+  }
+  .type_2_tw {
+    background: url("/app/images/dating_safely_types_tw.png") no-repeat 0% 45%;
+    background-size: cover;
+    min-height: 300px;
+  }
+  .type_3_tw {
+    background: url("/app/images/dating_safely_types_tw.png") no-repeat 0% 92%;
+    background-size: cover;
+    min-height: 360px;
+  }
+  .type_1_cn {
+    background: url("/app/images/dating_safely_types_cn.png") no-repeat 0% 3%;
+    background-size: cover;
+    min-height: 280px;
+  }
+  .type_2_cn {
+    background: url("/app/images/dating_safely_types_cn.png") no-repeat 0% 45%;
+    background-size: cover;
+    min-height: 300px;
+  }
+  .type_3_cn {
+    background: url("/app/images/dating_safely_types_cn.png") no-repeat 0% 92%;
+    background-size: cover;
+    min-height: 360px;
+  }
+  .type_1_en {
+    background: url("/app/images/dating_safely_types.png") no-repeat 0% 3%;
+    background-size: cover;
+    min-height: 310px;
+  }
+  .type_2_en {
+    background: url("/app/images/dating_safely_types.png") no-repeat 0% 46%;
+    background-size: cover;
+    min-height: 310px;
+  }
+  .type_3_en {
+    background: url("/app/images/dating_safely_types.png") no-repeat 0% 95%;
+    background-size: cover;
+    min-height: 370px;
+  }
+}

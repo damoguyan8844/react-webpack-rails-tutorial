@@ -1,0 +1,49 @@
+*{
+  font-family: 'Open Sans', sans-serif, 宋体;
+}
+
+.rb-body-wrap{
+  position: relative;
+  clear:both;
+  height:100%;
+  margin-top:$rb-header-height;
+  background-color: white;
+}
+.rb-dialog{
+  width:100%;
+  margin:auto;
+
+}
+.rb-dialog-content{
+  padding:15px;
+  text-align: center;
+  .close{
+    font-size:14px;
+    font-weight: 800;
+  }
+  .title{
+    height:40px;
+    font-size:24px;
+    color:rgba(0,0,0,0.8);
+  }
+}
+
+.no_scroll {
+  overflow: hidden;
+}
+@media only screen and(min-width: $rb-mobile-screen){
+  html,.rb-body-wrap{
+    background-color: $rb-background-color;
+  }
+
+  .rb-dialog{
+    width:340px;
+  }
+
+}
+
+@media only screen and (max-width: $rb-mobile-screen){
+  .rb-body-wrap{
+    margin-top:$rb-mobile-header-height;
+  }
+}

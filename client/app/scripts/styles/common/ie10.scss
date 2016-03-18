@@ -1,0 +1,77 @@
+@import "../_variables";
+@import "../_mixins";
+
+html[data-useragent*='MSIE 10.0']{
+
+  // ******* SEARCH & CONNECTION ******** //
+  .search_item_row,
+  .search_age-state_wrapper  {
+      display: block;
+  }
+
+  .search_country,
+  .search_age_option {
+    display: inline-block;
+  }
+
+  .rb-connections_content,
+  .search_panel_left {
+    display: inline-block;
+    width: 60%;
+  }
+
+  .search_item_label {
+    @include isDevice("ipad") {
+      display: inline-block;
+      width: 20%;
+    }
+  }
+
+  .search_field_row {
+    @include isDevice("ipad") {
+      display: inline-block;
+      width: 80%;
+    }
+  }
+
+  // ******* SETTING ******** //
+  .account_input-wrapper,
+  .account_sub-label {
+    display: block;
+  }
+
+  .contact_sub-label {
+    width: 70%;
+    display: block;
+  }
+
+  // ******* MYPROFILE ******** //
+  .mymatch-detail_match-edit-item--preference {
+    padding-left: 0;
+  }
+
+  .brief_photos_link {
+    display: block;
+    height: 100%;
+
+  }
+
+  // ******* PHOTO ******** //
+  .rb-desktop-photo-viewer {
+
+    .desktop-carousel{
+      width: 65%;
+      @include isDevice("ipad") {
+        width: 55%;
+      }
+    }
+
+    .rb-photo-detail{
+      width: 35%;
+      min-width: 0;
+      @include isDevice("ipad") {
+        width: 45%;
+      }
+    }
+  }
+}

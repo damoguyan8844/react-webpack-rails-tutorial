@@ -1,0 +1,122 @@
+.rb-msgpanel {
+  top: 60px;
+  position: absolute;
+  float: right;
+  height: 93%;
+  right: 0;
+  width: 400px;
+  background: #fff;
+  border: solid 1px $rb-app-border;
+  z-index: 99;
+
+  .msg-heading {
+    width: 100%;
+    height: 58px;
+    border-bottom: solid 1px $rb-app-border;
+    line-height: 58px;
+    padding-left: 10px;
+    padding-right: 10px;
+    li{
+      list-style-type: none;
+      text-align: center;
+    }
+
+  }
+  .msg-panel {
+    background: $rb-app-background-color;
+  }
+  .pop-chat-input-form{
+    background: #fff;
+    textarea {
+      float: left;
+      margin-left: 10px;
+      border: 0px;
+      width: 82%;
+      font-weight:100;
+      height: 23px;
+      overflow: hidden;
+      margin-top: 15px;
+      line-height: 1.0;
+      outline: none
+    }
+    div {
+      float: right;
+      margin-right: 15px;
+    }
+  }
+  .icon-button-close{
+    cursor: pointer;
+  }
+}
+
+.panel-wrap  {
+  height: 100%;
+}
+.msg-panel {
+  height: 100%;
+}
+.con-panel {
+  height: 100%;
+}
+
+.con-msg{
+  display: flex;
+  text-align: center;
+  li{
+    padding-left: 6px;
+  }
+  .active {
+    background: $rb-app-pink;
+    text-align: center;
+    color: #fff;
+    padding: 5px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .inbox-left{
+    width:40%
+  }
+}
+
+.pop-chat-box {
+  height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 40px;
+}
+
+.display_none {
+  display: none;
+}
+.pop-chat-input-panel{
+  bottom: 0px;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+}
+.con-title {
+  font-size: 20px;
+}
+.con-close{
+  padding-right: 8px;
+  text-align: right;
+}
+.pop-chat-header{
+  padding: 10px;
+  color: #000;
+  height: 65px;
+  background: #fff;
+
+}
+.user-info{
+  font-size: 18px;
+  margin: 0 0 0 3px;
+
+}
+.country-info{
+  font-size: 14px;
+  color: #858585;
+  margin-bottom: 12px;
+}

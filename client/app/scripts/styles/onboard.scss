@@ -1,0 +1,23 @@
+.rb-onboard {
+
+
+  .recommendations {
+    .title {
+      font-size: 24px;
+      color: rgba(0,0,0,0.90);
+      line-height: 28px;
+    }
+    .content {
+      font-family: HelveticaNeue;
+      font-size: 16px;
+      color: rgba(0,0,0,0.70);
+      line-height: 20px;
+    }
+    .bn-begin {
+      border: solid 0px $rb-app-pink;
+      @include edit-button(36px,154px,14px,white);
+      background: $rb-app-pink;
+      margin-right: 5px;
+    }
+  }
+}

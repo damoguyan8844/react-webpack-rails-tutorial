@@ -1,0 +1,1098 @@
+.no-border{
+  border: 0px solid white !important;
+  font-weight: 400;
+}
+.arrow-up{
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.arrow-down{
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.stick-bottom {
+  bottom: 15px;
+}
+
+.fa1 {
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(0, 0);
+  background: $rb-app-pink;
+  color: #fff;
+}
+
+.search {
+  max-width: $rb-app-width;
+  min-height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  background: $rb-app-background-color;
+  @include isDevice("mobile") {
+    margin-top: 40px;
+  }
+}
+
+.search_item_row {
+    border-bottom: solid 1px $rb-app-border;
+    display: flex;
+    @include isDevice("!mobile") {
+      padding-bottom: 20px;
+    }
+
+    li{
+      float: left;
+      height: 36px;
+      line-height: 36px;
+    }
+}
+
+.search_field_row {
+  width: 100%;
+}
+
+.search_field_item {
+  @include isDevice("!mobile") {
+    padding-right: 15px;
+    margin-top: 20px;
+  }
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.search_panel{
+  padding: 15px 10px 15px 15px;
+  display: flex;
+  @include isDevice("mobile") {
+    display: none !important;
+  }
+  .rb-checkbox:checked + .rb-checkbox-label:before {
+    margin: 10px 5px 0 0;
+  }
+  .rb-checkbox + .rb-checkbox-label:before {
+    margin: 10px 5px 0 0;
+  }
+  .rb-checkbox-wrapper {
+    @include isDevice("ipad") {
+      margin-top: 10px;
+    }
+  }
+}
+.search_panel_list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  width: 100%;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 4px;
+  z-index: 300;
+  padding: 3px 3px 0 3px;
+  opacity: 0;
+  pointer-events: none;
+  @include field-outline();
+
+  li {
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    padding-right: 10px;
+    padding-left: 2px;
+    padding-bottom: 46px;
+    padding-top: 10px;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #9e9e9e;
+    padding: 10px 20px;
+  }
+}
+
+.search_sidebar {
+  @include isDevice("!mobile") {
+    margin-left:-300px;
+    position:fixed;
+    &.show-footer{
+      position: absolute;
+      bottom:0px;
+      .rb-sidebar-detail{
+        position: static;
+      }
+    }
+  }
+  @include isDevice("desktop") {
+    margin-left:-400px;
+  }
+}
+
+.search_panel_left {
+  width: 100%;
+  @include isDevice("!mobile") {
+    margin-right:300px;
+    padding-right:15px;
+  }
+  @include isDevice("desktop") {
+    margin-right: 400px;
+  }
+}
+
+.search_item_label {
+  margin-top: 20px;
+  font-size: 14px;
+  color: black;
+  width: 76px;
+  display: none;
+  @include isDevice("!mobile") {
+    display:table;
+  }
+}
+
+.search_opts {
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid $rb-app-border;
+}
+
+.search_essentials_options {
+  width: 100%;
+}
+
+.search_sex-opt {
+  width: 190px;
+  @include isDevice("ipad") {
+    width: 100%;
+  }
+}
+
+.search_options {
+  @include isDevice("ipad") {
+    margin-top: 0px;
+  }
+}
+
+.search_criteria {
+  border-bottom: solid 0px #D7D7D7 !important;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 3px;
+}
+.search_criteria_items {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  padding-right: 10px;
+  padding-left: 2px;
+  padding-bottom: 46px;
+  padding-top: 10px;
+}
+.search_criteria_item {
+  padding: 9px 10px;
+  height: 35px;
+  line-height: 35px;
+  background: #EBEBEB;
+  border-radius: 2px;
+}
+.search_criteria_close{
+  margin-left: 10px;
+  color: #7F7F7F;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.search_button_change {
+  border: solid 0px $rb-app-pink;
+  @include edit-button(36px,154px,14px,white);
+  background: $rb-app-pink;
+  margin-right: 5px;
+}
+.search_span_wrapper {
+  padding: 0 11px;
+}
+.search_wrapper-dropdown {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  text-transform: none;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  border-radius: 2px;
+  &.is-focused{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid grey;
+  }
+  &.active {
+    .dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  li:hover a {
+    background: #ee3888;
+    color: #fff;
+  }
+}
+.search_adv_wrap {
+  width: 100%;
+  display: flex;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  span{
+    line-height: 36px;
+  }
+  .react-select-box:after {
+    margin: -2px 15px 0px 0px;
+    @include isDevice("mobile") {
+      margin-right: 20px;
+    }
+    @include isDevice("!mobile") {
+      margin: -2px 10px 0px 0px;
+      position: relative;
+      display: block;
+    }
+  }
+}
+.search_adv_opts{
+  border-bottom: none;
+  display: flex;
+  padding-top: 5px;
+  @include isDevice("mobile") {
+    display: block;
+  }
+  .Select-option {
+    @include isDevice("mobile") {
+      padding: 0px 10px;
+    }
+  }
+}
+.Select {
+  border-radius:2px;
+  border: 1px solid #ccc;
+}
+.Select-control{
+  height: 34px;
+}
+.Select-arrow{
+  border-width: 7px 7px 7px;
+  position:relative;
+  top:6px;
+}
+.Select-menu-outer{
+  outline-color: #c7c7c7;
+  outline-width: 1px;
+  outline-style: solid;
+  border: none;
+  overflow: hidden;
+  z-index: 300;
+}
+.Select-menu-outer,
+.search_panel_list,
+{
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(200,200,200,0.75);
+  -moz-box-shadow: 0px 2px 4px 1px rgba(200,200,200,0.75);
+  box-shadow: 0px 2px 4px 1px rgba(200,200,200,0.75);
+}
+.Select.is-open,
+.search_wrapper-dropdown.active {
+  -webkit-box-shadow: 0px -1px 4px 1px rgba(200,200,200,0.75);
+  -moz-box-shadow: 0px -1px 4px 1px rgba(200,200,200,0.75);
+  box-shadow: 0px -1px 4px 1px rgba(200,200,200,0.75);
+}
+
+.Select-control {
+  border: 0px solid #ccc;
+}
+
+.Select-item {
+  line-height: 20px;
+}
+
+.Select-item-icon {
+  padding: 1px 2px 2px;
+}
+
+.spinner {
+  width: 41px;
+  float: left;
+  padding: 2px 1px;
+  height: 26px;
+}
+
+.search_ages_input {
+  display: block;
+  width: 100%;
+  height: 26px;
+  padding: 0px 0px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #fff;
+  background-color: $rb-app-pink;
+  background-image: none;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.search_adv_item {
+  padding-right: 0px !important;
+  margin-right: 15px;
+  margin-top: 15px;
+  width: 100%;
+  @include isDevice("!mobile") {
+    width: auto;
+    .react-select-box-label {
+      min-width: 100px;
+      max-width: 100px;
+    }
+  }
+}
+
+.search_adv_item--range {
+  @include isDevice("!mobile") {
+    .react-select-box-label {
+      min-width: auto;
+      min-width: initial;
+    }
+    .react-select-box-container {
+      width: initial;
+      width: auto;
+    }
+    .react-select-box {
+      width: initial;
+      width: auto;
+    }
+  }
+  .react-select-box {
+    @include isDevice("mobile") {
+      width: 90%;
+    }
+    &:after {
+      display: none;
+    }
+  }
+  span {
+    @include isDevice("mobile") {
+      width: 30px;
+    }
+  }
+}
+
+.right-select-box {
+  width: 100%;
+  .react-select-box:after {
+    display: block;
+  }
+}
+
+.search_adv_height {
+  width: 122px;
+  min-width: 122px;
+
+  .spinner {
+    width: 50px;
+  }
+
+  .search_wrapper-dropdown:after {
+    right: 25px;
+  }
+
+  .adv_close {
+    right: 5px;
+  }
+}
+
+.span_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.search_adv_item--age {
+  .react-select-box-label {
+    min-width: 30px;
+  }
+}
+
+.search_age_option {
+  width: 118px;
+  @include isDevice("ipad") {
+    width: 175px;
+  }
+  @include isDevice("desktop") {
+    width: 118px;
+  }
+}
+
+.search_basic_options {
+  width: 100%;
+}
+.search_input-group_btn-vertical {
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  opacity: 0.9;
+  background-color: $rb-app-pink;
+  @include isDevice("mobile") {
+    background-color: white;
+  }
+  i{
+    position: absolute;
+    top: 0;
+    left: 2px;
+  }
+}
+
+.search_btn-vertical {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 6px 8px;
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+  border: 0px solid transparent;
+  opacity: 0.9;
+  background-color: $rb-app-pink;
+
+  &:first-child {
+    border-top-right-radius: 4px;
+  }
+  &:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+  }
+  &:hover, &:active, &:focus {
+    background: none;
+  }
+}
+
+.search_ages_divider{
+  float: left;
+  padding: 0 4px;
+}
+
+.search_sort{
+  width: 150px;
+  display: inline-block;
+}
+
+.search_button{
+  border: solid 0px $rb-app-pink;
+  @include edit-button(36px,154px,14px,white);
+  background: $rb-app-pink;
+  float: right;
+}
+
+
+.search_control{
+  margin: 16px 0 2px 0;
+  border-right-width: 0px !important;
+  border: solid 0px white;
+}
+
+.search_wrap,
+.search_country_wrap,
+.search_state_wrap,
+.search_sort_wrap{
+  border-radius: 2px;
+}
+
+.search_wrap {
+  width: 100%;
+  @include isDevice("!mobile") {
+    width: 165px;
+  }
+}
+
+.search_sort_wrap {
+  width: 100px;
+  .Select-option {
+    padding: 10px 10px;
+  }
+}
+.search_country{
+  width: 160px;
+  @include isDevice("ipad") {
+    width: inherit;
+  }
+}
+
+.search_age-state_wrapper {
+  @include isDevice("ipad")   {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.search_state {
+  width: 160px;
+  @include isDevice("ipad") {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+.search_looking_wrap{
+  width: 100%;
+  border-radius: 2px;
+}
+.search_result_no-user{
+  margin: 10px 0;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.adv_close {
+  height: 36px;
+  line-height: 36px;
+  color: #ccc;
+  cursor: pointer;
+  position: absolute;;
+  padding-top: 2px;
+  top: 0px;
+  margin-left: 7px;
+  @include isDevice("!mobile") {
+    right: 5px;
+  }
+  @include isDevice("mobile") {
+    margin-left: 5px;
+  }
+}
+.adv_label {
+  display: inline-table;
+  height: 30px;
+  line-height: 30px;
+}
+
+.search_result_item {
+  display: flex;
+  margin-bottom: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  &:last-child{
+    margin-bottom:0px;
+  }
+}
+.search_result_badge {
+  margin-left: 15px;
+}
+.search_result_img-container {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-right: 18px;
+}
+.search_result {
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+
+
+  @include isDevice("mobile") {
+    margin-top: 15px;
+  }
+}
+
+.search_result_info {
+  padding-left: 0;
+}
+.search_result_text {
+  margin: 0 0 3px 0;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search_result_user-name {
+  color: black;
+  font-size:17px;
+  font-weight: 600;
+}
+
+.search_result_user_location{
+  color: #7e7e7e;
+  font-size:12px;
+}
+
+.search_result_user_introduce {
+  color: #4a4a4a;
+  font-size:14px;
+  margin-top:12px;
+  overflow: hidden;
+  height: 40px;
+  max-width: 80%;
+  @include isDevice("mobile") {
+    max-width: 100%;
+  }
+}
+
+.pagination {
+  border-width: 0px !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .sr-only-w {
+    padding: 0px 8px;
+  }
+}
+.pagination_link,
+.pagination_span {
+  position: relative;
+  float: left;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #000;
+  margin-left: -1px;
+  border-radius: 2px !important;
+}
+
+.pagination_link {
+  padding: 6px 12px;
+  border: 1px solid $rb-app-pink;
+}
+.pagination_link:visited,
+.pagination_span:visited,
+.pagination_link:focus,
+.pagination_span:focus{
+  border: 1px solid $rb-app-pink;
+  border-color: $rb-app-pink;
+  background-color: #fff;
+}
+
+.current_page {
+  background-color: $rb-app-pink !important;
+  color: #fff !important;
+}
+
+
+/***********mobile style******************************/
+.mb-search {
+  @include isDevice("!mobile") {
+    display: none;
+  }
+  @include isDevice("mobile") {
+    display: block;
+    margin-top: 40px;
+  }
+}
+.mb-search_result {
+  padding: 12px;
+}
+.mb-search_sort{
+  float: right;
+  width: 30%;
+  padding-left: 10px;
+}
+.mb-search_head{
+  height: 35px;
+}
+.mb-search_button{
+  height: 35px;
+  font-size: 16px;
+  color: white;
+  width: 70%;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  border-radius: 2px;
+  background: $rb-app-pink;
+}
+
+.mb-search_img-container{
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-right: 18px;
+}
+.mb-search_info{
+  padding-left: 0;
+}
+.mb-search_text{
+  margin: 0;
+  &--username{
+    color: #575757;
+    font-size:16px;
+  }
+  &--user-location{
+    color: #000;
+    font-size:12px;
+    opacity: 0.5;
+  }
+  &--user-introduce{
+    color: #000;
+    font-size:14px;
+    opacity: 0.7;
+    margin-top:15px;
+    overflow: hidden;
+    height: 40px;
+  }
+}
+.mb-search_filters {
+  width: 100%;
+  font-size: 14px;
+}
+
+.mb-search_filters_header{
+  background: #f6f6f6;
+  border: solid 1px #DEDEDE;
+  padding-left: 15px;
+}
+.mb-search_filters_close{
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.mb-search_filters_age {
+  width: 100%;
+  display: flex;
+
+  .Select-option {
+    @include isDevice("mobile") {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+.mb-search_filters_span{
+  height: 38px;
+  line-height: 38px;
+}
+.mb-search_filters_label {
+  padding-bottom: 5px;
+  border-bottom: solid 1px #D7D7D7;
+}
+.mb-search_filters_preference{
+  float: right;
+  margin-right: 5px;
+}
+.mb-search_filters_min-age-label {
+  display: flex;
+  color: #ccc;
+  height: 35px;
+  line-height: 35px;
+  width: 50%;
+  .Select{
+    margin-left: 5px;
+    width: 50%;
+    border: 1px solid #ccc;
+    height: 38px;
+  }
+}
+.mb-search_filters_max-age-label {
+  color: #ccc;
+  float: right;
+  height: 36px;
+  line-height: 35px;
+  margin-right: 5px;
+  width: 50%;
+  .Select{
+    margin-left: 5px;
+    width: 50%;
+    float: right;
+    border: 1px solid #ccc;
+  }
+}
+.mb-search_filters_max-label{
+  float: right;
+}
+.mb-search_filters_looking-wrap{
+  width: 100%;
+  border-radius: 2px;
+  padding-right: 0px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+
+.mb-search_filters_items
+{
+  background: #fff;
+  padding: 5px 15px 0px 15px;
+  padding-bottom: 71px;
+  overflow: initial;
+  height: 100%;
+
+  li{
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  // .mb-spinner {
+  //   width: 60px;
+  //   float: left;
+  //   padding: 2px;
+  //   border: solid 1px #ccc;
+  //   margin-left: 20px;
+  //   border-radius: 4px;
+  // }
+  // .mb-ages-input {
+  //   display: block;
+  //   width: 100%;
+  //   height: 30px;
+  //   padding: 0px 0px;
+  //   font-size: 14px;
+  //   line-height: 1.42857143;
+  //   background-color: #fff;
+  //   background-image: none;
+  //   border: 0px solid #ccc;
+  //   text-align: center;
+  //   color: #000;
+  // }
+  .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+    border: 0px solid transparent;
+    background: #fff !important;
+  }
+  // .mb-fa1 {
+  //   display: inline-block;
+  //   font-size: inherit;
+  //   text-rendering: auto;
+  //   -webkit-font-smoothing: antialiased;
+  //   -webkit-transform: translate(0, 0);
+  //   transform: translate(0, 0);
+  // }
+  .rb-checkbox + .rb-checkbox-label:before {
+    margin: 2px 10px 10px 0px;
+  }
+  .rb-checkbox:checked + .rb-checkbox-label:before {
+    margin: 2px 10px 10px 0px;
+  }
+}
+.mb-search_filters_age {
+  width: 100%;
+}
+.mb-search_show-match {
+  bottom: 0px;
+  position: fixed;
+  height: 71px;
+  line-height: 71px;
+  width: 100%;
+  box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.25);
+  background: #fff;
+  text-align: center;
+  z-index: 99;
+}
+
+.mb-search_show-match_bn{
+  height: 35px;
+  font-size: 16px;
+  color: white;
+  width: 95%;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  border-radius: 2px;
+  background: $rb-app-pink;
+  margin-top: 13px;
+}
+
+.search-footer{
+  height: 20px;
+}
+
+.Select-option {
+  color: black;
+  @include isDevice("mobile") {
+    padding: 10px;
+  }
+}
+
+.Select-option:hover,
+.Select-option:focus,
+.Select-option:active,
+.Select-option.is-focused {
+  background-color: #e7e7e7;
+}
+
+.Select-item-icon{
+  padding:0px;
+}
+
+
+.mb-search_filters_min-label,
+.mb-search_filters_max-label{
+  margin-right:15px;
+}
+
+.react-select-box {
+  @include isDevice("!mobile") {
+    width: 100%;
+  }
+}
+
+.react-select-box-container,
+.react-select-box
+.Select-menu-outer {
+  width:100%;
+}
+
+.react-select-box-container {
+  padding: 0 5px;
+}
+
+.mb_checkbox_margin{
+  margin-top:5px;
+}
+
+.react-select-box-options{
+  width:100%;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 0;
+  margin: 0;
+  outline-color: #ccc;
+  outline-width: 1px;
+  outline-style: solid;
+}
+
+.react-select-box-option {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 0px;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.react-select-box-multi {
+  .react-select-box-option {
+    margin: 0 0 0 -5px;
+    line-height: 1.7;
+    border-bottom: none;
+
+    &:before {
+      width:18px;
+      height:15px;
+      display: inline-block;
+      font: 16px/1em sans-serif;
+      padding:0;
+      border: none;
+      vertical-align: top;
+      margin: 5px 10px 0px 0px;
+      background: url("/app/images/checkbox.png");
+      background-size: 15px;
+      background-repeat: no-repeat;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .react-select-box-option-selected {
+    color: black;
+    &:before {
+      content: "";
+      background: url("/images/checkbox_checked.png");
+      background-size: 18px 15px;
+      background-repeat: no-repeat;
+    }
+  }
+
+}
+
+.react-select-box-label {
+  -webkit-flex: 1;
+  flex: 1;
+}
+.react-select-box{
+  display: -webkit-flex;
+  display: flex;
+}
+.react-select-box-container{
+  display: -webkit-flex;
+  display: flex;
+}
+
+.react-select-box-item-label {
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left:5px;
+  // @include isDevice("!mobile") {
+  //   width: 105%;
+  // }
+}
+
+
+@media(max-width: $rb-mobile-screen) {
+
+  // .select-modal{
+  //   width:100%;
+  //   height:90%;
+  //   position:relative;
+  //   overflow:scroll;
+  //   border-radius:5px;
+  // }
+  //
+  // .select-button{
+  //   display:block;
+  //   height: 36px;
+  //   background-color: white;
+  //   color: black;
+  //   border: 1px solid #d8d8d8;
+  //   width: 100%;
+  //   text-align: left;
+  //   padding:7px 10px;
+  // }
+  //
+  // .select-button-arrow{
+  //   color:#a2a2a2;
+  //   position: relative;
+  //   float:right;
+  //   font-size:12px;
+  //   padding-top:3px;
+  // }
+}
+
+// @media(max-width: $rb-pad-screen) {
+//   span.desc {
+//     display: none;
+//   }
+//   .search_state{
+//     width: 92%;
+//   }
+// }

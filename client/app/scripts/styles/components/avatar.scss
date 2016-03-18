@@ -1,0 +1,139 @@
+@import "../_variables";
+@import "../_mixins";
+
+.rb-profile-avatar{
+  height: 263px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $rb-profile-border;
+  border-bottom: none;
+  @include isDevice("mobile") {
+    border: none;
+  }
+  @include isDevice("ipad"){
+    height: 226px;
+  }
+}
+
+.profile-avatar_img{
+  width:100%;
+}
+.profile-avatar_arrows{
+  width:100%;
+  position:absolute;
+  top:50%;
+  height: 70px;
+  margin-top:-35px;
+  padding-left:0px;
+  @include isDevice("!mobile") {
+    display: none;
+  }
+  @include isDevice("mobile") {
+    padding-left: 0;
+  }
+}
+.profile-avatar_arrow{
+  text-decoration: none;
+  color:white;
+  width:45px;
+  height: 100%;
+  display: block;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+  &:hover{
+    opacity: 0.8;
+    color: white;
+  }
+}
+.profile-avatar_icon{
+  font-size:50px;
+  line-height: 70px;
+  &:hover {
+    color: white;
+  }
+}
+.profile-avatar_change{
+  display:none;
+}
+
+.profile-avatar_online{
+  background-color: $rb-app-green;
+  top: 15px;
+  position: absolute;
+  right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 20px;
+  font-size: 11px;
+}
+
+.profile-avatar_name-address{
+  position: absolute;
+  bottom: 15px;
+  padding-left: 10px;
+}
+
+.profile-avatar_name{
+  font-size: 20px;
+  padding-right: 10px;
+}
+.profile-avatar_address{
+  font-size:15px;
+  color:#C6C6C6;
+  font-weight: $rb-weight-light;
+}
+
+.rb-avatar-cover{
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.45) 93%);
+  background-repeat: no-repeat;
+  position: absolute;
+  width:100%;
+  height:100%;
+  color:white;
+
+  span{
+    vertical-align: middle;
+  }
+  @include isDevice("!mobile") {
+    cursor: pointer;
+  }
+
+  &.edit-mode:hover{
+
+    @include isDevice("!mobile") {
+      cursor: auto;
+    }
+    .profile-avatar_user-info{
+      @include isDevice("!mobile") {
+        display:none;
+      }
+    }
+    .profile-avatar_change {
+      margin-left: 10px;
+      @include isDevice("!mobile") {
+        display:block;
+        position:absolute;
+        bottom:16px;
+        line-height: 33px;
+        font-size:$rb-font-large;
+      }
+    }
+    .profile-avatar_change_link{
+      @include isDevice("!mobile") {
+        color:white;
+      }
+    }
+    .profile-avatar_change_text{
+      @include isDevice("!mobile") {
+        display:inline-block;
+        padding-left:10px;
+        float:left;
+      }
+    }
+    .profile-avatar_change_svg{
+      @include isDevice("!mobile") {
+        float:left;
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+//UPLOADING STATUS
+.uploading-status{
+  position:absolute;
+  bottom:94px;
+  z-index:1;
+  width:275px;
+}
+
+.uploading-status_failed{
+  width:100%;
+}
+.uploading-status_tip{
+  font-size:16px;
+  color:white;
+
+}
+.uploading-status_try-again{
+  @include edit-button(30px,45px,16px,white);
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.uploading-status_bar {
+  border-top: 4px solid #1ABE68;
+}
+//UPLOADING STATUS ENDS
+//UPLOADER STARTS
+.uploader{
+  text-align: center;
+  width:305px;
+  margin:auto;
+
+  .dz-message{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dz-preview{
+    display: none;
+  }
+
+  .modal-body{
+    padding: 0;
+  }
+}
+
+.uploader_container{
+  padding:15px;
+  position: relative;
+  padding-top: 5px;
+  .cropper-slider{
+    display: flex;
+  }
+  .sub-title{
+    padding-bottom:15px;
+  }
+}
+
+.uploader_title{
+  line-height:40px;
+  color:$rb-sub-color;
+  font-size:20px;
+  font-weight: $rb-weight-medium;
+  padding-bottom: 5px;
+}
+
+.close--uploader{
+  line-height:40px;
+  font-size: 16px;
+  opacity: 1;
+  color: $rb-component-gray;
+}
+
+.uploader_button_clear {
+  @include rb-button-filled(30px, 40px, 18px, rgba(0,0,0,0.7));
+  position: absolute;
+  line-height: 30px;
+  right: 25px;
+  top: 60px;
+  z-index: 1;
+  border: 1px solid white;
+}
+
+.uploader_drag{
+  border: dashed 1px #ccc;
+  width: 275px;
+  height:275px;
+  font-size:16px;
+  color:$rb-light-color;
+  cursor: pointer;
+}
+
+.uploader_innerdiv{
+  padding:10px 0px;
+}
+
+.uploader_or{
+  font-weight: bold;
+}
+
+.uploader_divider{
+  font-weight: bold;
+  height: 1px;
+  border: none;
+  background: #C4C4C4;
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.20);
+  margin:0 1px;
+}
+.uploader_cancel,
+.uploader_save{
+  @include edit-button(40px,100%,16px, white);
+  border-color:$rb-app-green;
+  background-color: $rb-app-green;
+  margin-top:15px;
+}
+.uploader_save {
+  &.uploading{
+    background-color: #c7c7c7;
+    border-color: #c7c7c7;
+    cursor: progress;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.uploader_photos_wrapper {
+  height: 187px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  padding: 0 15px;
+}
+
+.rb-photo-uploader .modal-content {
+  border-radius: 0px;
+}
+
+.uploader_photos {
+  padding: 15px 0;
+  width: 304px;
+}
+
+.uploader_img{
+  width:130px;
+  height:130px;
+  margin-top:10px;
+  &:hover{
+    cursor: pointer;
+    outline-offset: -5px;
+    outline-color: $rb-app-pink;
+    outline-width: 5px;
+    outline-style: solid;
+  }
+}
+//UPLOADER ENDS
+.rb-photo-cropper{
+  width: 275px;
+  height:275px;
+  .cropper_img{
+    display: none;
+  }
+  .cropper-view-box{
+    outline:none;
+  }
+}
+
+.rb-cropper-slider{
+  display: flex;
+  text-align: center;
+
+  .rangeslider{
+    width:225px;
+    &.disabled{
+      .rangeslider__handle{
+        border-color:#ddd;
+        background-color: #ddd;
+      }
+    }
+  }
+}
+.cropper-slider_plus{
+  padding-left:7px;
+  line-height: 24px;
+  font-size:14px;
+}
+.cropper-slider_minus{
+  padding-right:7px;
+  line-height: 20px;
+  font-size:14px;
+}
+.cropper-slider_rotate{
+  padding-top:4px;
+  padding-left:7px;
+  cursor: pointer;
+}

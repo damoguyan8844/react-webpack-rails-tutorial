@@ -1,0 +1,164 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif, 宋体;
+}
+html{
+  height:100%;
+}
+
+ul{
+  list-style: none;
+  margin:0px;
+  padding:0px;
+}
+li{
+  list-style-type: none;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+textarea, button,input,a{
+  outline:none;
+  resize:none;
+}
+textarea{
+  border-color:$rb-app-border;
+}
+
+a:hover{
+  text-decoration: none;
+}
+a:focus{
+  outline:none;
+  text-decoration: none;
+}
+input:focus {
+  outline: none;
+}
+input{
+  border:1px solid $rb-app-border;
+}
+
+//bootstrap modal
+.in.modal{
+  display:flex !important;
+  height:100%;
+  .modal-content{
+    border:none;
+  }
+}
+
+.pull-left{
+  float:left;
+}
+.pull-right{
+  float:right;
+}
+.display-none{
+  display: none;
+}
+.gray-border{
+  border:solid 1px #ccc;
+}
+input[type="checkbox"] {
+  margin: 0 0 0
+}
+.align-center{
+  text-align: center;
+}
+.align-right{
+  text-align: right;
+}
+
+
+.staff-badge{
+  @include badge($rb-hightlight-color,white);
+}
+.vip-badge{
+  @include badge($rb-app-yellow);
+}
+
+//for DropZone.js
+.dz-preview{
+  display: none;
+}
+/******font size, for responsive elements only!! ********/
+
+
+.ellipsis-3line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  // fallack for firefox which doesn't support ellipsis-3line
+  max-height: 5em;
+}
+
+.loading{
+  margin: 30px auto;
+  padding: 10px;
+  width:60px;
+}
+
+.ellipsis-2line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  // fallack for firefox which doesn't support ellipsis-2line
+  max-height: 3em;
+  word-wrap: break-word;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.single-line{
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  display: block;
+}
+
+.icon-button-close {
+  font-size: 16px;
+  opacity: 1;
+  color: $rb-component-gray;
+  font-weight: bold;
+}
+
+.modal-bottom.modal {
+  @media(max-width: $rb-mobile-screen) {
+    display: initial !important;
+    top: initial;
+    height: initial;
+    width: 100%;
+  }
+}
+
+@media(min-width: $rb-mobile-screen) {
+  .mobile{
+    display:none;
+  }
+}
+@media not all and (min-width: $rb-mobile-screen) {
+  .desktop{
+    display:none;
+  }
+}

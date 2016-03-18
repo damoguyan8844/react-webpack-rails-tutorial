@@ -1,0 +1,34 @@
+.rb-nav-tab{
+  font-size:14px;
+  background-color:white;
+  border:solid 1px #ccc;
+
+  .active{
+    border-bottom: solid 3px $rb-app-pink;
+  }
+}
+
+.nav-tab_items {
+  display:flex;
+  height: 45px;
+  margin-bottom:-1px;
+
+  @include isDevice("mobile") {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.nav-tab_item {
+  display:inline-block;
+  text-align: center;
+}
+.nav-tab_item_link {
+  color:black;
+  line-height: 43px;
+  padding: 0px 10px;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}

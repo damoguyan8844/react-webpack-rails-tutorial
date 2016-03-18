@@ -62,6 +62,7 @@ export default class CommentForm extends BaseComponent {
   }
 
   _handleSubmit(e) {
+    alert("fgghg");
     e.preventDefault();
     const { actions } = this.props;
     actions

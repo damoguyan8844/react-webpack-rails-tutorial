@@ -1,5 +1,6 @@
 import App from './ClientApp';
 import RouterApp from './ClientRouterApp';
+import Login from '../../../Login.js';
 import SimpleCommentScreen from '../components/SimpleCommentScreen/SimpleCommentScreen';
 import ReactOnRails from 'react-on-rails';
 
@@ -11,6 +12,7 @@ ReactOnRails.register(
   {
     App,
     RouterApp,
+    Login,
     SimpleCommentScreen,
   }
 );

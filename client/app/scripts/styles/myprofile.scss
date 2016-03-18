@@ -1,0 +1,914 @@
+.Select-option.is-focused,
+.Select-option:hover {
+  background-color: #e7e7e7;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  padding-top:8px;
+}
+
+.rb-myprofile {
+  max-width: $rb-app-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include isDevice("!mobile") {
+    padding:15px 15px 50px 15px;
+    background-color: $rb-app-background-color;
+    display:flex;
+  }
+
+  .more{
+    padding: 0 10px;
+    @include isDevice("!mobile") {
+      padding: 0;
+    }
+  }
+
+}
+.rb-myprofile-content{
+
+  padding-left:25px;
+  width:65%;
+  -ms-flex: 1 0 auto;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  @include isDevice("mobile") {
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .rb-nav-tab{
+    @include isDevice("!mobile") {
+      font-size:20px;
+      border: solid 1px $rb-profile-border;
+    }
+    .nav-tab_item {
+      margin: 0px 20px;
+
+      @include isDevice("desktop") {
+        width: auto;
+      }
+
+      @include isDevice("ipad") {
+        margin: 0px 10px;
+      }
+
+      @include isDevice("mobile") {
+        padding: 0 15px;
+        margin: 0px;
+      }
+
+      &.active {
+        font-weight: $rb-weight-medium;
+      }
+    }
+    .nav-tab_items {
+      overflow: hidden;
+      @include isDevice("mobile") {
+        overflow: scroll;
+      }
+    }
+    .nav-tab_item_link {
+      @include isDevice("!mobile") {
+        line-height: 47px;
+      }
+      @include isDevice("mobile") {
+        padding: 0px;
+      }
+    }
+  }
+}
+
+.rb-myprofile-sidebar{
+
+  min-width:35%;
+  max-width: 35%;
+
+  @include isDevice("mobile") {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .rb-myprofile-overview{
+    display: none;
+    background-color: white;
+
+    @include isDevice("!mobile") {
+      display:block;
+      border: solid 1px $rb-profile-border;
+    }
+  }
+}
+
+
+//OVERVIEW STARTS
+.myoverview {
+  @include isDevice("!mobile") {
+    display:block;
+    border: solid 1px $rb-profile-border;
+  }
+}
+.myoverview_earn-diamonds{
+  padding:25px 15px 25px 15px;
+}
+.myoverview_earn-diamonds_item{
+  display: flex;
+  justify-content: space-between;
+}
+.myoverview_earn-diamonds_data{
+  padding-left:10px;
+}
+
+.myoverview_earn-diamonds_line{
+  margin-top:3px;
+  margin-bottom:10px;
+  border-top-color:#ccc;
+}
+
+.myoverview_earn-diamonds_title {
+  font-size: 18px;
+}
+
+.myoverview_progress-status {
+
+  padding:25px 15px 25px 15px;
+  background-color: white;
+}
+.myoverview_progress-status_title {
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+.myoverview_progress-status_val {
+  color:$rb-hightlight-color;
+  margin-top:5px;
+  float:right;
+}
+
+.myoverview_progress-status_bar {
+  width:100%;
+  display: flex;
+}
+
+.myoverview_progress-status_bar_left{
+  border-top: solid 1px $rb-hightlight-color;
+}
+
+.myoverview_progress-status_bar_right{
+  border-top: solid 1px #ccc;
+}
+
+.myoverview_progress-status_list{
+  padding:10px 0px;
+}
+
+.myoverview_progress-status_list_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+// OVERVIEW SECTION ENDS
+
+.rb-user-stats{
+  width:100%;
+  display:flex;
+}
+.rb-user-stats_item{
+  width:50%;
+  height:67px;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  border-right:solid 1px #ccc;
+  &:last-child{
+    border-right:none;
+  }
+  border-bottom:solid 1px #ccc;
+}
+
+.rb-user-stats_title{
+  font-size:14px;
+  font-weight:$rb-font-regular;
+  color:$rb-sub-color;
+}
+.rb-user-stats_stat{
+  font-size:18px;
+  color:$rb-hightlight-color;
+}
+
+
+//INSIGHT STARTS
+.myinsight_edit{
+  @include edit-button(35px,65px,14px,$rb-action-color);
+  line-height: 33px;
+  i{
+    padding-right:3px;
+  }
+}
+
+.myinsight_cancel{
+  @include edit-button(40px,125px,14px,$rb-error-color);
+
+  @include isDevice("mobile") {
+    @include edit-button(35px,65px,14px,$rb-error-color);
+    line-height: 33px;
+  }
+}
+
+.myinsight_save{
+  @include edit-button(40px,125px,14px,$rb-action-color);
+  @include isDevice("mobile") {
+    @include edit-button(35px,65px,14px,$rb-action-color);
+    line-height: 33px;
+  }
+}
+
+.myinsight_title {
+  margin-top: 25px;
+  font-size:24px;
+  color:$rb-normal-color;
+  @include isDevice("mobile") {
+    font-size:18px;
+  }
+}
+
+.myinsight_edit-pencil{
+  cursor: pointer;
+  color:$rb-action-color;
+  display: inline-block;
+  font-size:15px;
+  padding-left:15px;
+
+  &:hover{
+    opacity: 0.8;
+  }
+
+  @include isDevice("mobile") {
+    display: none;
+  }
+}
+
+.myinsight_question{
+  cursor: pointer;
+  font-weight: $rb-weight-regular;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.myinsight_textbox {
+  height:190px;
+  width:100%;
+  font-size:14px;
+  padding: 10px;
+  margin-top: 10px;
+  border-color:#ccc;
+  border-width: 1px;
+  -moz-border-top-colors: #ccc;
+  -moz-border-right-colors: #ccc;
+  -moz-border-bottom-colors: #ccc;
+  -moz-border-left-colors: #ccc;
+  @include isDevice("mobile") {
+    margin-top: 0;
+  }
+}
+
+.myinsight_divider {
+  display: none;
+  @include isDevice("mobile") {
+    display: block;
+    margin: 3px 0 10px 0;
+  }
+}
+
+.myinsight_answer{
+  font-size: 14px;
+  color: $rb-light-color;
+  padding: 5px 0px;
+  white-space: pre-line;
+  cursor: pointer;
+  @include isDevice("!mobile") {
+    width: 90%;
+  }
+}
+
+.myinsight_mobile {
+  display: none;
+  @include isDevice("mobile") {
+    display: block;
+    padding-top: 20px;
+  }
+}
+//INSIGHT ENDS
+
+//PHOTO UPLOAD STARTS
+.desktop-upload {
+  margin: 15px 0;
+  padding:15px 20px;
+  background-color: #F1F1F1;
+  text-align: center;
+  @include isDevice("mobile") {
+    display: none;
+  }
+}
+
+.desktop-upload_dropzone {
+  border: dashed 1px #ccc;
+  height:217px;
+  font-size:16px;
+  color:$rb-light-color;
+  cursor: pointer;
+}
+
+.desktop-upload_dropzone_add-photo {
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .dropzone-message{
+    padding:10px 0px;
+  }
+
+  .or{
+    font-weight: $rb-weight-semi-bold;
+  }
+}
+
+.main-upload-dropzone {
+  padding-top:20px;
+}
+
+.main-upload-dropzone_add-photo {
+  border:dashed 1px #ccc;
+  width:100%;
+  height:300px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .desc{
+    padding-top:20px;
+  }
+}
+
+.mobile-dropzone {
+  cursor: pointer;
+  position: absolute;
+  bottom:25px;
+  right:25px;
+  @include isDevice("!mobile") {
+    display: none;
+  }
+}
+
+.rb-myprofile-photos{
+  position: relative;
+
+  @include isDevice("mobile") {
+    margin-top: 10px;
+  }
+
+}
+//PHOTO UPLOAD ENDS
+//PHOTOS START
+.myphotos_photo{
+  position:relative;
+  margin-right:2.33%;
+  margin-bottom:2.33%;
+  width:31%;
+  display: inline-block;
+  overflow: hidden;
+  &.uploading .myphotos_img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    &.portrait{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &.uploading:hover .uploading-mask {
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom: 4px;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 5;
+  }
+}
+
+.myphotos_img{
+  width:100%;
+}
+
+.myphotos_error-mask {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:0px;
+  background-color: black;
+  opacity: 0.8;
+}
+.myphotos_error-mask_bar{
+  position: absolute;
+  bottom:0px;
+  height:4px;
+  width: 100%;
+  background-color: $rb-error-color;
+}
+
+.myphotos_flagged-content {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 15%;
+}
+.myphotos_flagged-content_title {
+  color:$rb-error-color;
+  top:40%;
+  font-size:14px;
+  padding-bottom:15%;
+  padding-left:4%;
+  padding-right:4%;
+}
+
+.myphotos_flagged-content_delete {
+  @include edit-button(30px,70px,14px,white);
+}
+
+.myphotos_upload-progress-bar {
+  position: absolute;
+  bottom: 0px;
+  height: 4px;
+  background-color: $rb-app-green;
+}
+
+.myphotos_photos-list {
+  display: block;
+  flex-wrap: wrap;
+  margin-right:-2.33%;
+}
+
+.myphotos_photos-list.has-main-profile {
+
+  margin-right: 0;
+
+  .myphotos_photo:first-child {
+    width:100%;
+
+    @include isDevice("mobile") {
+      margin-right: 0;
+      margin-top: 0;
+    }
+
+    @include isDevice("!mobile") {
+          width:31%;
+    }
+  }
+}
+// PHOTO ENDS
+
+// DETAIL, MATCH STARTS
+.mymatch-detail {
+  display: inline-block;
+  width: 100%;
+}
+
+.Select-control {
+  border-radius: 2px;
+}
+
+.rb-checkbox-label {
+  @include isDevice("!mobile") {
+    margin: 0;
+  }
+}
+
+.mymatch-detail_view-title {
+  font-size: 24px;
+  cursor: pointer;
+}
+.mymatch-detail_view-title_link{
+  text-decoration: underline;
+  color: #333;
+  vertical-align: super;
+  &:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+}
+
+.mymatch-detail_view-title_img{
+  margin-right: 10px;
+  float: left;
+}
+
+.mymatch-detail_view-title_text {
+  vertical-align: top;
+}
+
+.mymatch-detail_view-items{
+  padding: 25px 15px;
+  width: 100%;
+  display: inline-block;
+}
+
+.mymatch-detail_view-items_title-wrapper {
+  padding-bottom: 20px;
+}
+
+.mymatch-detail_view-item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px $rb-app-border;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+}
+
+.mymatch-detail_view-item_label{
+  margin-right: 5px;
+  min-width: 100px;
+  opacity: 0.5;
+}
+
+.mymatch-detail_match-show{
+  display: none;
+  @include isDevice("!mobile") {
+    display: block;
+  }
+}
+
+.mymatch-detail_min-max{
+  width: 75%;
+  height: 36px;
+  line-height: 36px;
+  float: left;
+  display: table;
+  margin-bottom: 20px;
+
+  @include isDevice("mobile") {
+    width: 100%;
+    float: none;
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  &_item{
+    float: left;
+    display: flex;
+    @include isDevice("mobile") {
+      width: 50%;
+    }
+
+    &:last-child {
+      margin-left: 25px;
+      @include isDevice("mobile") {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .Select{
+    width: 90px;
+    margin-left: 10px;
+  }
+}
+
+.mymatch-detail_mb-edit-cancel{
+  margin: 25px 15px 0 15px;
+  height: 28px;
+
+  @include isDevice("!mobile") {
+    display: none;
+  }
+
+  &_text{
+    font-size: 14px;
+    color: #E3102A;
+    line-height: 16px;
+    text-decoration:underline;
+    float: right;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+}
+
+.mymatch-detail_bn-cancel{
+  @include isDevice("!mobile") {
+    display: block;
+  }
+  @include edit-button(50px,150px,20px,$rb-edit-red);
+  display: none;
+}
+
+.mymatch-detail_bn-save{
+  @include edit-button(50px,150px,20px,$rb-edit-blue);
+}
+
+.mymatch-detail_mb-save{
+  @include isDevice("mobile") {
+     @include rb-button-filled(50px, 90%, 16px, $rb-app-green);
+  }
+}
+
+.mymatch-detail_match-edit-item {
+  display: flex;
+  justify-content: space-between;
+  line-height: 36px;
+
+  .Select {
+    margin-right: 5px;
+    width:90%;
+    @include isDevice("mobile") {
+      width: 100%;
+    }
+  }
+}
+.mymatch-detail_match-edit-item_name{
+  width: 25%;
+}
+
+.mymatch-detail_match-edit-item--preference{
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+  @include isDevice("mobile") {
+    float: left;
+    width: 100%;
+    position: relative;
+    color: $rb-text-light-grey;
+    margin-right: 10px;
+    padding-left: 0;
+  }
+}
+.mymatch-detail_match-edit-item_values{
+  width:75%;
+  float:right;
+  padding-left:10px;
+  color: $rb-text-grey;
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+
+.mymatch-detail_edit-item {
+  margin-top: 20px;
+  line-height: 36px;
+
+  @include isDevice("!mobile") {
+    width: 100%;
+  }
+}
+
+.mymatch-detail_edit-item:last-child {
+  margin-bottom: 30px;
+}
+
+.mymatch-detail_edit-item_value {
+  width: 70%;
+  height: 36px;
+  line-height: 36px;
+  display: table;
+  font-weight: 400;
+  color: $rb-text-grey;
+
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+
+  .Select{
+    line-height: 32px;
+    height: 36px;
+    @include isDevice("desktop") {
+      width: 165px;
+    }
+  }
+}
+.mymatch-detail_edit-item_value--zip-code {
+  @include isDevice("!mobile") {
+    padding-right: 5px;
+  }
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+  &_input {
+    @include field-border();
+    padding-left: 10px;
+    width: 165px;
+    color: black;
+    height: 36px;
+    @include isDevice("mobile") {
+      width: 100%;
+    }
+  }
+
+  &_result {
+    display: none;
+  }
+}
+
+.mymatch-detail_edit-item_value--time-zone {
+  @include isDevice("desktop") {
+    .Select {
+      width: 70%;
+    }
+  }
+}
+
+.mymatch-detail_edit-item_value--gender {
+  .Select {
+    @include isDevice("mobile") {
+      width: 100%;
+    }
+  }
+}
+
+.mymatch-detail_edit-item_value--height {
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.mymatch-detail_edit-item_value--Interests,
+.mymatch-detail_edit-item_value--Languages {
+  float: left;
+}
+
+.mymatch-detail_edit-item_name {
+  min-width: 100px;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  float: left;
+  font-weight: $rb-weight-regular;
+  font-size: 16px;
+
+  @include isDevice("mobile") {
+    font-weight: $rb-weight-semi-bold;
+    color: $rb-text-grey;
+    width: 100%;
+  }
+
+  @include isDevice("!mobile") {
+      width: 25%;
+  }
+}
+
+.mymatch-detail_edit-item_input{
+  padding-left: 8px;
+  height: 36px;
+  border-radius: 2px;
+  @include field-border();
+
+  @include isDevice("!mobile") {
+    width: 70%;
+  }
+
+  @include isDevice("mobile") {
+    width: 100%;
+  }
+}
+
+.mymatch-detail_edit-item_birth {
+  display: flex;
+
+  @include isDevice("!mobile") {
+    width: 75%;
+  }
+
+  @include isDevice("mobile") {
+    width: 100%;
+    display:block;
+  }
+
+  .Select {
+    margin-right: 20px;
+    width: 19%;
+
+    @include isDevice("mobile") {
+      width: 28%;
+      display: inline-block;
+      margin-right: 8%;
+      padding-right: 0;
+
+      &:last-of-type{
+        margin-right:0;
+      }
+    }
+  }
+
+  .Select-menu-outer {
+    margin-top: 0;
+  }
+}
+
+.Select-placeholder{
+  font-weight: $rb-weight-regular;
+}
+
+.mymatch-detail_class-item{
+  font-size: 24px;
+  padding-bottom: 5px;
+  @include app-linebreak-border();
+  margin-bottom: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+.mymatch-detail_edit-btns{
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+
+  @include isDevice("!mobile") {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+  }
+}
+
+.mymatch-detail_class-expand{
+
+  font-size: 0px;
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid rgba(0,0,0,0.45);
+  margin: -3px 0 0 1px;
+  cursor: pointer;
+
+  &.active{
+    border-left: 7px solid rgba(0,0,0,0.45);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    cursor: pointer;
+    margin: 0 0 0 2px;
+  }
+}
+
+.mymatch-detail_detail-nav{
+  float: right;
+  padding: 3px 6px 3px 5px;
+  margin-top: 12px;
+  border: 1px solid rgba(0,0,0,0.45);
+  border-radius: 999px;
+  width: 20px;
+  height: 20px;
+
+  &.active {
+    padding: 10px 4px 2px 2px;
+  }
+}
+
+.rb-checkbox-wrapper {
+  margin-bottom: 10px;
+}
+
+.Select-input {
+  height: 36px;
+}
+
+.mydetail-checkbox-wrapper,
+.mymatch-checkbox-wrapper {
+  display: inline-block;
+  width:33%;
+
+  @include isDevice("mobile") {
+    width: 50%;
+  }
+}
+
+.mymatch-checkbox-wrapper {
+  margin-bottom: 5px;
+
+  .rb-checkbox:checked + .rb-checkbox-label:before,
+  .rb-checkbox:checked + .rb-checkbox-label:before {
+    margin:2px 10px 0px 0px;
+  }
+
+  .rb-checkbox + .rb-checkbox-label:before,
+  .rb-checkbox + .rb-checkbox-label:before {
+    margin:2px 10px 0px 0px;
+  }
+}

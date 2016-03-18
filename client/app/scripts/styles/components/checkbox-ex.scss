@@ -1,0 +1,60 @@
+.checkbox-2:not(:checked),
+.checkbox-2:checked {
+  display: none;
+}
+
+.checkbox-2:not(:checked) + .checkbox-label-2,
+.checkbox-2:checked + .checkbox-label-2 {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+/* checkbox aspect */
+.checkbox-2:not(:checked) + .checkbox-label-2:before,
+.checkbox-2:checked + .checkbox-label-2:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+
+/* checked mark aspect */
+.checkbox-2:not(:checked) + .checkbox-label-2:after,
+.checkbox-2:checked + .checkbox-label-2:after {
+  content: '\2713';
+  position: absolute;
+  top: 3px; left: 4px;
+  font-size: 20px;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+
+/* checked mark aspect changes */
+.checkbox-2:not(:checked) + .checkbox-label-2:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.checkbox-2:checked + .checkbox-label-2:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* disabled checkbox */
+.checkbox-2:disabled:not(:checked) + .checkbox-label-2:before,
+.checkbox-2:disabled:checked + .checkbox-label-2:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+.checkbox-2:disabled:checked + .checkbox-label-2:after {
+  color: #999;
+}
+.checkbox-2:disabled + .checkbox-label-2 {
+  color: #aaa;
+}

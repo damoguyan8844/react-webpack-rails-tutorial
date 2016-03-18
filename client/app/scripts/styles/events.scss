@@ -1,0 +1,356 @@
+@import './_variables';
+@import './_mixins';
+
+.events-desktop{
+  max-width:$rb-app-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding:15px;
+  background-color: $rb-app-background-color;
+  @include isDevice('!mobile'){
+    display: flex;
+  }
+  .events-header,.event-pagination{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    min-height: 50px;
+  }
+}
+
+.events-left{
+  width:40%;
+  padding-right:5%;
+  .events-header{
+    .region{
+      font-size:24px;
+      color: $rb-sub-color;
+    }
+    .change-region{
+      font-size:12px;
+      color:$rb-light-color;
+      text-decoration: underline;
+    }
+  }
+  .event-list{
+    width:100%;
+    min-height: 400px;
+    border:1px solid $rb-app-border;
+    background-color: white;
+  }
+  .event-item{
+    display: flex;
+    height: 130px;
+    align-items: center;
+    border-bottom: 1px solid $rb-app-border;
+    padding:15px;
+    cursor: pointer;
+    &.active{
+      background-color: #fafafa;
+    }
+    .avatar{
+      margin-right: 15px;
+    }
+    .avatar img{
+      width: 100px;
+      height: 100px;
+    }
+    .content{
+      height: 100%;
+      overflow: hidden;
+    }
+    .name{
+      font-size:18px;
+      color:$rb-normal-color;
+    }
+    .date{
+      font-size: 12px;
+      color:$rb-light-color;
+    }
+    .desc{
+      font-size:14px;
+      color:$rb-sub-color;
+    }
+  }
+  .past-events{
+    padding-top:45px;
+    .title{
+      font-size:24px;
+      color:$rb-normal-color;
+      padding-bottom: 5px;
+      margin-bottom:20px;
+      border-bottom: 1px solid $rb-app-border;
+    }
+    .photo{
+      width:100%;
+    }
+    .name{
+      padding:15px 0px;
+      font-size: 18px;
+      color:$rb-normal-color;
+    }
+
+  }
+}
+.events-right{
+  width:60%;
+  .event-pagination{
+    &.next-only{
+      justify-content: flex-end;
+    }
+    .nav{
+      font-size:14px;
+      color:$rb-hightlight-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.events-mobile{
+  padding: 15px;
+  .event-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+}
+.events-mobile .event-item{
+  border:1px solid $rb-app-border;
+  width:100%;
+  cursor: pointer;
+  margin-bottom:20px;
+  .event-box{
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    img{
+      width:100%;
+    }
+    .name{
+      font-size: 20px;
+      color: white;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+    .overlay{
+      position: absolute;
+      left:0px;
+      right:0px;
+      top:0px;
+      bottom:0px;
+      ackground-image: linear-gradient(rgba(0, 0, 0, 0), black);
+    }
+  }
+  .content{
+    padding-left:15px;
+    .region, .duration{
+      min-height: 80px;
+      padding-top:15px;
+      color:$rb-normal-color;
+      font-size: 14px;
+    }
+  }
+}
+
+//Event Detail
+
+.event-detail{
+  .event-box{
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    img{
+      width:100%;
+    }
+    .name{
+      font-size: 20px;
+      color: white;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
+    .overlay{
+      position: absolute;
+      left:0px;
+      right:0px;
+      top:0px;
+      bottom:0px;
+      ackground-image: linear-gradient(rgba(0, 0, 0, 0), black);
+    }
+  }
+}
+
+.event-participants{
+  height: 110px;
+  border:1px solid $rb-app-border;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:10px;
+  color: $rb-sub-color;
+  .stats-see-all{
+    display: flex;
+    justify-content: space-between;
+    .stats{
+      font-size:14px;
+    }
+    .see-all{
+      font-size:12px;
+      text-decoration: underline;
+      cursor:pointer;
+    }
+  }
+  .avatar-list{
+    height: 60px;
+    overflow: hidden;
+  }
+  .avatar{
+    overflow: hidden;
+    float:left;
+    text-align: center;
+    margin-right:20px;
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .name{
+      padding-top:10px;
+      line-height: 10px;
+      font-size:10px;
+      color: $rb-sub-color;
+    }
+  }
+}
+.event-content{
+  padding-top:25px;
+  .event-actions{
+    display: flex;
+    justify-content: space-between;
+    padding-top:20px;
+    @include isDevice('mobile'){
+      flex-direction: column;
+    }
+  }
+  .where-when{
+    font-size:14px;
+    color:$rb-sub-color;
+    line-height: 24px;
+    padding-bottom: 15px;
+    .when{
+      padding-top:20px;
+    }
+    .title{
+      font-size:16px;
+      color:black;
+    }
+    .link{
+      @include rb-link(14px,$rb-hightlight-color);
+    }
+  }
+  .purchase-interest{
+    text-align: center;
+    .purchase{
+      @include rb-button-filled(40px,127px,16px,$rb-app-green);
+      @include isDevice('mobile'){
+        width: 100%;
+      }
+    }
+    .link{
+      @include rb-link(14px,$rb-sub-color);
+      padding-top:15px;
+    }
+  }
+}
+
+.event-description{
+  padding-top:30px;
+  .title{
+    font-size:16px;
+    color:black;
+  }
+}
+
+.event-ticket{
+  padding-top:30px;
+  padding-bottom: 50px;
+  position: relative;
+  .title{
+    font-size:16px;
+    color:black;
+    padding:10px 0px;
+  }
+  .selectors{
+    display: flex;
+    justify-content: space-between;
+    @include isDevice('mobile'){
+      flex-direction: column;
+    }
+    .pricing{
+      width:55%;
+      @include isDevice('mobile'){
+        width: 100%;
+      }
+    }
+    .gender, .age{
+      min-width: 100px;
+    }
+  }
+  .info{
+    display: flex;
+    justify-content: space-between;
+    @include isDevice('mobile'){
+      flex-direction: column;
+    }
+    input{
+      height: 40px;
+      @include isDevice('mobile'){
+        width: 100%;
+      }
+    }
+    .id{
+      min-width: 120px;
+      width: 25%;
+      @include isDevice('mobile'){
+        width: 100%;
+      }
+    }
+    .phone{
+      min-width: 150px;
+      width: 25%;
+      @include isDevice('mobile'){
+        width: 100%;
+      }
+      .title{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @include isDevice('mobile'){
+          justify-content: flex-start;
+        }
+      }
+      .help-icon{
+        height: 20px;
+        padding-left:10px;
+      }
+    }
+    .buy-tickets{
+      @include rb-button-filled(40px,40%,16px,$rb-app-green);
+      align-self: flex-end;
+      @include isDevice('mobile'){
+        margin-top:20px;
+        width:100%;
+      }
+    }
+  }
+}
+
+#buy-ticket-anchor{
+  position: absolute;
+  top:-80px;
+}

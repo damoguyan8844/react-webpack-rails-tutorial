@@ -1,0 +1,36 @@
+.rb-checkbox {
+  display: none;
+}
+
+.rb-checkbox-label{
+  cursor: pointer;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display:block;
+  white-space: nowrap;
+}
+
+.rb-checkbox-label:before {
+  width:18px;
+  height:15px;
+  //border:1px solid #c7c7c7;
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  padding:0;
+  vertical-align: top;
+  margin:10px;
+  border-radius: 2px;
+
+}
+.rb-checkbox:checked + .rb-checkbox-label:before {
+  background: url("/app/images/checkbox_checked.png");
+  background-size: 18px 15px;
+  background-repeat: no-repeat;
+}
+.rb-checkbox + .rb-checkbox-label:before {
+  content: "";
+  background: url("/app/images/checkbox.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+}

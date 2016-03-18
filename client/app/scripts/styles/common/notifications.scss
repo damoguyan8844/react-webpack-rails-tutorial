@@ -1,0 +1,100 @@
+/*********** Notifications ****************/
+
+#rb-notifications{
+  max-width: $rb-app-width;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+}
+.rb-notify-item{
+  width: 270px;
+  height: 80px;
+  background-color:white;
+  border-left:solid 1px #ccc;
+  border-right:solid 1px #ccc;
+  border-top:solid 1px #ccc;
+  border-bottom:solid 3px $rb-app-green;
+  box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.32);
+  .close{
+    font-size:16px;
+    padding-top:5px;
+    padding-right:5px;
+  }
+  a{
+    height:100%;
+    display:block;
+    color:black;
+  }
+  .title{
+    margin-top:-20px;
+    padding: 5px  0px 5px 15px;
+  }
+  .simple{
+    padding-top: 20px;
+    .description{
+      padding-left:15px;
+      opacity: 0.6;
+    }
+  }
+  .message{
+    img{
+      width:70px;
+      height:76px;
+      float:left;
+    }
+    >div{
+      width:180px;
+    }
+    .message-body{
+      padding-left:15px;
+    }
+    .body{
+      opacity: 0.6;
+    }
+
+  }
+}
+.rb-notify-wrapper{
+  position:fixed;
+  display:flex;
+  z-index: 10000;
+  bottom:15px;
+  left:15px;
+  .rb-notify-item{
+    margin-right:15px;
+  }
+}
+
+.notify-item {
+
+  .rb-checkbox:checked + .rb-checkbox-label:before,
+  .rb-checkbox:checked + .rb-checkbox-label:before {
+    margin: 5px 10px 10px 0px;
+  }
+
+  .rb-checkbox + .rb-checkbox-label:before,
+  .rb-checkbox + .rb-checkbox-label:before {
+    margin: 5px 10px 10px 0px;
+  }
+
+  .rb-checkbox-wrapper{
+    margin-bottom: 15px;
+  }
+
+}
+
+@media only screen and (min-width: $rb-mobile-screen){
+  #rb-notifications{
+    direction: rtl;
+  }
+  .rb-notify-wrapper{
+    direction: ltr;
+    padding-top:15px;
+    left:auto;
+    bottom:auto;
+    display: block;
+    .rb-notify-item{
+      margin-bottom: 10px;
+    }
+  }
+}
