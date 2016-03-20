@@ -1,0 +1,15 @@
+# Basic procfile for dev work.
+# Runs all processes. Development is faster if you pick one of the other Procfiles if you don't need
+# some of the processes: Procfile.rails or Procfile.express
+
+# Development rails requires both rails and rails-assets
+# (and rails-server-assets if server rendering)
+#rails: REACT_ON_RAILS_ENV= rails s
+
+# Build client assets, watching for changes.
+#rails-client-assets: sh -c 'rm app/assets/webpack/* || true && npm run build:client'
+
+# Build server assets, watching for changes. Remove if not server rendering.
+#rails-server-assets: sh -c 'npm run build:server'
+
+rails-all: sh -c 'rm app/assets/webpack/* || true && npm run build:client && npm run build:server && REACT_ON_RAILS_ENV= rails s'

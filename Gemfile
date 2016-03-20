@@ -12,7 +12,6 @@ group :production do
   # Pg is used for Heroku
   gem "pg"
   gem "rails_12factor" # Never include this for development or tests
-  gem "puma"
 end
 
 # Use SCSS for stylesheets
