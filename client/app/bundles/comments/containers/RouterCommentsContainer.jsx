@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import CommentScreen from '../components/CommentScreen/CommentScreen';
 import * as commentsActionCreators from '../actions/commentsActionCreators';
 import BaseComponent from 'libs/components/BaseComponent';
+import Login from '../../../Login.js';
 
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
@@ -26,7 +27,7 @@ class RouterCommentsContainer extends BaseComponent {
     const locationState = this.props.location.state;
 
     return (
-      <CommentScreen {...{ actions, data, locationState }} />
+      <Login {...{ actions, data, locationState }} />
     );
   }
 }
