@@ -7,6 +7,8 @@ import {createHistory,useQueries} from 'history';
 import RBService from './scripts/services/RBService';
 import User from './scripts/models/User';
 import Login from './scripts/views/login/Login';
+import Search from './scripts/views/search/Search';
+
 
 var LoginPage = React.createClass({
 
@@ -44,7 +46,7 @@ var LoginPage = React.createClass({
     render: function() {
         return(
             <div onClick={this._onClick}>
-
+                <Search />
             </div>
         )
     }
