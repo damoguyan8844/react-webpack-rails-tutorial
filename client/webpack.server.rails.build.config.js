@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const fileSystem = require("fs");
 
 const devBuild = process.env.NODE_ENV !== 'production';
 const nodeEnv = devBuild ? 'development' : 'production';
@@ -31,6 +32,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(nodeEnv),
       },
     }),
+    new webpack.BannerPlugin('*/ ' + fileSystem.readFileSync('./app/bundles/comments/startup/BeforeServerRender.js', 'utf8') + ' /*'),
   ],
   module: {
     loaders: [
