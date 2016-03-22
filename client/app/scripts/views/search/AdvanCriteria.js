@@ -6,7 +6,7 @@ import AdvanceSelect from "./MultiSelect.js";
 import Select from 'react-select';
 import {cons_opts,cons_opt_vals,sign_opts,zodiac_opts,birthplace_opts,faith_opts,height_opts,age_arrived_opts} from "../../common/CommonItems.js";
 import {usedMulitCriterias} from '../../actions/SearchActionCreators.js';
-import { SEARCH } from '../../utils/ConstantValues';
+import ConstantValues from '../../utils/ConstantValues';
 import SpinnerSelect from './SpinnerSelect.js'
 
 var adv_opts= {
@@ -28,8 +28,8 @@ var adv_opts= {
     'age_arrived': {multi:false, options:age_arrived_opts }
 };
 
-var minHeight = SEARCH.DEFAULT_MIN_HEIGHT;
-var maxHeight = SEARCH.DEFAULT_MAX_HEIGHT;
+var minHeight = ConstantValues.SEARCH.DEFAULT_MIN_HEIGHT;
+var maxHeight = ConstantValues.SEARCH.DEFAULT_MAX_HEIGHT;
 var convertToCentimeter = function (inches) {
   return Math.round(inches * 2.54);
 }

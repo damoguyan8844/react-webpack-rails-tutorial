@@ -13,6 +13,7 @@ module.exports = {
   context: __dirname,
   entry: [
     'babel-polyfill',
+    './app/scripts/utils/ConstantValues',
     './app/bundles/comments/startup/serverRegistration',
   ],
   output: {
