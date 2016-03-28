@@ -23,7 +23,7 @@ var Settings = React.createClass({
         return {
             menuItems:[],
             activeItem:'account',
-            expand:false
+            expand:false,
         }
     },
     handleSelect(selectedKey) {
@@ -52,15 +52,15 @@ var Settings = React.createClass({
             this.setState({ activeItem: setting_item });
     },
     render: function() {
-        const {formatMessage} = this.props.intl;
+
         var menus = this.state.menuItems.map(function(item){
             if(item == this.state.activeItem){
                 return (
-                    <NavItem eventKey={item} key={item} className="rb-settings_item active">{formatMessage({id:"setting_menus." +item}) }</NavItem>
+                    <NavItem eventKey={item} key={item} className="rb-settings_item active">{"setting_menus." +item}</NavItem>
                 )
             }else{
                 return (
-                    <NavItem eventKey={item} key={item} className="rb-settings_item">{formatMessage({id:"setting_menus." +item}) }</NavItem>
+                    <NavItem eventKey={item} key={item} className="rb-settings_item">{"setting_menus." +item}</NavItem>
                 )
             }
 
@@ -68,18 +68,19 @@ var Settings = React.createClass({
         var mb_menus = this.state.menuItems.map(function(item){
             if(item !== this.state.activeItem){
                 return (
-                    <li className="rb-settings_mbitem" eventKey={item} key={item} onClick={this.changeMenu.bind(null,item)}>{formatMessage({id:"setting_menus." +item}) }</li>
+                    <li className="rb-settings_mbitem" eventKey={item} key={item} onClick={this.changeMenu.bind(null,item)}>{"setting_menus." +item}</li>
                 )
             }
         }.bind(this));
 
         var cls=this.state.expand ? "hideMenu" : "hideMenu display_none";
         var nav_cls=this.state.expand ? "mb_nav active" : "mb_nav";
+        var tttt = this.state.$$comments;
         return(
             <div className="rb-settings">
                 <div className="rb-settings_header">
-                    <h2>{formatMessage({id:"settings"})}</h2>
-                    <p>{formatMessage({id:"change_all_your_settings"})}</p>
+                    <h2>settings</h2>
+                    <p>change_all_your_settings</p>
                 </div>
                 <div>
                     <Nav className="rb-settings_nav" bsStyle="tabs"  onSelect={this.handleSelect} >
@@ -87,26 +88,12 @@ var Settings = React.createClass({
                     </Nav>
 
                     <div className={ "rb-settings_" + nav_cls} onClick={this.expandMenu}>
-                        <span>{formatMessage({id:"setting_menus." +this.state.activeItem})}</span>
+                        <span>setting_menus</span>
                     </div>
                     <ul className={ "rb-settings_" + cls}>
                         {mb_menus}
                     </ul>
-                    {
-                        this.state.activeItem == 'account' && <Account changeMenu={this.changeMenu} />
-                    }
-                    {
-                        this.state.activeItem == 'notification' && <Notifications />
-                    }
-                    {
-                        (this.state.activeItem == 'vip_status') && <VIPStatus isVIP={this.props.overview.isVIP} />
-                    }
-                    {
-                        (!this.props.overview.isVIP && this.state.activeItem == 'my_diamonds') && <MyDiamounts />
-                    }
-                    {
-                        this.state.activeItem == 'contact' && <Contact />
-                    }
+
                 </div>
             </div>
         )

@@ -5,11 +5,11 @@ import { bindActionCreators } from 'redux';
 import CommentScreen from '../components/CommentScreen/CommentScreen';
 import * as commentsActionCreators from '../actions/commentsActionCreators';
 import BaseComponent from 'libs/components/BaseComponent';
-import Login from '../../../Login.js';
+import Settings from '../../../scripts/views/settings/Settings.js';
 
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
-  return { data: state.$$commentsStore };
+  return { me: state.me};
 }
 
 class RouterCommentsContainer extends BaseComponent {
@@ -19,15 +19,17 @@ class RouterCommentsContainer extends BaseComponent {
     location: PropTypes.shape({
       state: PropTypes.object,
     }).isRequired,
+    me: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
   };
 
   render() {
-    const { dispatch, data } = this.props;
+    const { dispatch, me } = this.props;
     const actions = bindActionCreators(commentsActionCreators, dispatch);
     const locationState = this.props.location.state;
 
     return (
-      <Login {...{ actions, data, locationState }} />
+      <Settings {...{ actions, me, locationState }} />
     );
   }
 }
