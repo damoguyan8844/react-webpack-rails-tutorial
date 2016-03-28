@@ -15,15 +15,12 @@ function select(state) {
 class NonRouterCommentsContainer extends BaseComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    data: PropTypes.object.isRequired,
     me: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired,
   };
 
   render() {
     const { dispatch, me } = this.props;
     const actions = bindActionCreators(commentsActionCreators, dispatch);
-    //const { dispatch, me } = this.props;
     return (
       <Settings {...{ actions, me }} />
     );

@@ -15,12 +15,10 @@ function select(state) {
 class RouterCommentsContainer extends BaseComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    data: PropTypes.object.isRequired,
+    me: PropTypes.object.isRequired,
     location: PropTypes.shape({
       state: PropTypes.object,
     }).isRequired,
-    me: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired,
   };
 
   render() {
