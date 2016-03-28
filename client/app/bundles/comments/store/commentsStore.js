@@ -1,4 +1,4 @@
-import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
+import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'libs/middlewares/loggerMiddleware';
 import reducers from '../reducers';
@@ -14,9 +14,10 @@ export default props => {
   };
 
   const reducer = combineReducers(reducers);
-  const composedStore = compose(
+  // Sync dispatched route actions to the history
+  const finalCreateStore = compose(
     applyMiddleware(thunkMiddleware, loggerMiddleware)
-  );
+  )(createStore);
 
-  return composedStore(createStore)(reducer, initialState);
+  return finalCreateStore(reducer, initialState);
 };
