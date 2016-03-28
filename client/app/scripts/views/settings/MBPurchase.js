@@ -179,4 +179,4 @@ var MBPurchase = React.createClass({
     }
 });
 
-export default injectIntl(MBPurchase);
+export default MBPurchase;

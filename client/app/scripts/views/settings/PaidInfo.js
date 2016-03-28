@@ -44,4 +44,4 @@ function mapStateToProps(state){
 }
 
 PaidInfo = connect(mapStateToProps)(PaidInfo);
-export default injectIntl(PaidInfo);
+export default PaidInfo;

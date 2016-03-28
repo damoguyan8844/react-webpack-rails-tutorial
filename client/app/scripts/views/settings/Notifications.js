@@ -133,4 +133,4 @@ var Notifications = React.createClass({
 
 });
 
-export default injectIntl(Notifications);
+export default Notifications;

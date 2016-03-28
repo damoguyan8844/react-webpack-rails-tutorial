@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import {addLocaleData, IntlProvider} from 'react-intl';
+import {addLocaleData } from 'react-intl';
 import queryString from 'query-string';
 
 import {createHistory,useQueries} from 'history';
 import RBService from './scripts/services/RBService';
 import User from './scripts/models/User';
 import Login from './scripts/views/login/Login';
-import Search from './scripts/views/search/Search';
+//import Search from './scripts/views/search/Search';
+import Settings from './scripts/views/settings/Settings.js';
 
 
 var LoginPage = React.createClass({
@@ -17,9 +18,7 @@ var LoginPage = React.createClass({
     },
     renderApp:function(locale,messages){
         return (
-            <IntlProvider locale={locale} messages={messages}>
                 <Login />
-            </IntlProvider>
         )
     },
     _onClick(){
@@ -46,7 +45,7 @@ var LoginPage = React.createClass({
     render: function() {
         return(
             <div onClick={this._onClick}>
-                <Search />
+                <Settings />
             </div>
         )
     }

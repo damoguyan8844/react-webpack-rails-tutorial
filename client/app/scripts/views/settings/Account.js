@@ -67,15 +67,12 @@ var Account = React.createClass({
     },
     disableAccount: function(){
         const {formatMessage} = this.props.intl;
-        if(!window.confirm(formatMessage({id:'confirm_disable_account'}))){
-            return false;
-        };
+
         RBService.disableAccount().then(function(response){
             var items = response.data;  //JSON.stringify
 
             RBNotify.notify('simple',{title:'Disable Successfully!'});
             var url = `/${this.props.overview.locale}/app/signup`;
-            window.location.href = url;
             console.log(url);
         }.bind(this))
             .catch(function(response){
@@ -85,14 +82,12 @@ var Account = React.createClass({
     },
     deleteAccount: function(){
         const {formatMessage} = this.props.intl;
-        if(!window.confirm(formatMessage({id:'confirm_delete_account'}))){
-            return false;
-        };
         RBService.deleteAccount().then(function(response){
         var items = response.data;  //JSON.stringify
         RBNotify.notify('simple',{title:'Delete Successfully!'});
         var url = `/${this.props.overview.locale}/app/signup`;
-        window.location.href = url;
+        var e = "window.location.href = url;";
+            eval(e);
         console.log(url);
     }.bind(this))
         .catch(function(response){
@@ -192,4 +187,4 @@ function mapStateToProps(state){
 }
 
 Account = connect(mapStateToProps)(Account)
-export default injectIntl(Account);
+export default Account;

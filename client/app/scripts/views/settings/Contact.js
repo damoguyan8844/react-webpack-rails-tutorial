@@ -5,6 +5,7 @@ var IntlMixin = ReactIntl.IntlMixin;
 import { Link } from 'react-router';
 import {injectIntl,defineMessages,FormattedMessage} from 'react-intl';
 
+
 var Contact = React.createClass({
     render:function(){
         const {formatMessage} = this.props.intl;
@@ -30,4 +31,4 @@ var Contact = React.createClass({
     }
 });
 
-export default injectIntl(Contact);
+export default Contact;

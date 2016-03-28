@@ -148,4 +148,4 @@ var PurchaseForm = React.createClass({
 })
 
 
-export default injectIntl(PurchaseForm, {withRef: true});
+export default PurchaseForm;

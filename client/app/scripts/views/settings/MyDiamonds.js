@@ -177,4 +177,4 @@ function mapStateToProps(state){
 }
 
 MyDiamonds = connect(mapStateToProps,{updateUserStatus})(MyDiamonds);
-export default injectIntl(MyDiamonds);
+export default MyDiamonds;

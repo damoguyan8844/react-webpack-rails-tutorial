@@ -92,4 +92,4 @@ var PlanInfo = React.createClass({
     }
 });
 
-export default injectIntl(PlanInfo);
+export default PlanInfo;

@@ -167,4 +167,4 @@ var CardInfo = React.createClass({
     }
 });
 
-export default injectIntl(CardInfo);
+export default CardInfo;
